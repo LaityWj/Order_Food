@@ -1,0 +1,403 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CE68967A-03C0-4958-9C1C-F9A73B3AFFF3}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Order_Food_View</RootNamespace>
+    <AssemblyName>Order_Food_View</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Smobiler_128.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Smobiler.Utility" />
+    <Reference Include="Smobiler.Core" />
+    <Reference Include="Smobiler.Core.Controls" />
+    <Reference Include="Smobiler.Plugins" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.4.3.0\lib\net462\System.IO.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http, Version=4.1.1.3, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Http.4.3.4\lib\net46\System.Net.Http.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.4.3.0\lib\net462\System.Runtime.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.0\lib\net463\System.Security.Cryptography.Algorithms.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.3.0\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="frmGenerateQRcode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGenerateQRcode.Designer.cs">
+      <DependentUpon>frmGenerateQRcode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmHelp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHelp.Designer.cs">
+      <DependentUpon>frmHelp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSetting.Designer.cs">
+      <DependentUpon>frmSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HelperClass\Helper.cs" />
+    <Compile Include="HelperClass\HttpClientHelper.cs" />
+    <Compile Include="HttpClientHelper.cs" />
+    <Compile Include="MobileGlobal.cs" />
+    <Compile Include="Page\IntegralForm.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Page\IntegralForm.Designer.cs" />
+    <Compile Include="Page\OrderPage\OrderForm.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Page\OrderPage\OrderForm.Designer.cs">
+      <DependentUpon>OrderForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Page\OrderPage\OrderListForm.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Page\OrderPage\OrderListForm.Designer.cs">
+      <DependentUpon>OrderListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Page\OrderPage\SuccessOrder.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Page\OrderPage\SuccessOrder.Designer.cs">
+      <DependentUpon>SuccessOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Page\OutFoodFrom\AddressForm.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Page\OutFoodFrom\AddressForm.Designer.cs">
+      <DependentUpon>AddressForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Page\OutFoodFrom\OrderForm.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Page\OutFoodFrom\OrderForm.Designer.cs">
+      <DependentUpon>OrderForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Page\RestaurantInformation.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Page\RestaurantInformation.Designer.cs">
+      <DependentUpon>RestaurantInformation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Page\SmobilerMyForm.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Page\SmobilerMyForm.Designer.cs">
+      <DependentUpon>SmobilerMyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Page\SmobilerRechargeForm.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Page\SmobilerRechargeForm.Designer.cs">
+      <DependentUpon>SmobilerRechargeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Page\SmobilerSetPwdForm.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Page\SmobilerSetPwdForm.Designer.cs">
+      <DependentUpon>SmobilerSetPwdForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Page\SmobilerUpdatePwdForm.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Page\SmobilerUpdatePwdForm.Designer.cs">
+      <DependentUpon>SmobilerUpdatePwdForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.cs" />
+    <Compile Include="Page\SmobilerFirst.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Page\SmobilerFirst.Designer.cs">
+      <DependentUpon>SmobilerFirst.cs</DependentUpon>
+    </Compile>
+    <Compile Include="take_out_foodForm.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="take_out_foodForm.designer.cs">
+      <DependentUpon>take_out_foodForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\CJControl\IntegralIncomeControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControl\CJControl\IntegralIncomeControl.Designer.cs" />
+    <Compile Include="UserControl\CJControl\SmobilerFirstControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControl\CJControl\SmobilerFirstControl.Designer.cs">
+      <DependentUpon>SmobilerFirstControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\Layout\BuyCar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControl\Layout\BuyCar.Designer.cs">
+      <DependentUpon>BuyCar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\Layout\frmAddress.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControl\Layout\frmAddress.Designer.cs">
+      <DependentUpon>frmAddress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\Layout\frmResList.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControl\Layout\frmResList.Designer.cs">
+      <DependentUpon>frmResList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\Layout\FrmResType.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControl\Layout\FrmResType.Designer.cs">
+      <DependentUpon>FrmResType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\Layout\LeaveTime.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControl\Layout\LeaveTime.Designer.cs">
+      <DependentUpon>LeaveTime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\Layout\OrderType.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControl\Layout\OrderType.Designer.cs">
+      <DependentUpon>OrderType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\Layout\TableWare.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControl\Layout\TableWare.Designer.cs">
+      <DependentUpon>TableWare.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\Order\CouPonControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControl\Order\CouPonControl.Designer.cs">
+      <DependentUpon>CouPonControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\Order\OrderShowListControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControl\Order\OrderShowListControl.Designer.cs">
+      <DependentUpon>OrderShowListControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\Order\OrderUserControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControl\Order\OrderUserControl.Designer.cs">
+      <DependentUpon>OrderUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\Order\ShowCouPonControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControl\Order\ShowCouPonControl.Designer.cs">
+      <DependentUpon>ShowCouPonControl.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="frmGenerateQRcode.resx">
+      <DependentUpon>frmGenerateQRcode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHelp.resx">
+      <DependentUpon>frmHelp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSetting.resx">
+      <DependentUpon>frmSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Page\IntegralForm.resx" />
+    <EmbeddedResource Include="Page\OrderPage\OrderForm.resx">
+      <DependentUpon>OrderForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Page\OrderPage\OrderListForm.resx">
+      <DependentUpon>OrderListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Page\OrderPage\SuccessOrder.resx">
+      <DependentUpon>SuccessOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Page\OutFoodFrom\AddressForm.resx">
+      <DependentUpon>AddressForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Page\OutFoodFrom\OrderForm.resx">
+      <DependentUpon>OrderForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Page\RestaurantInformation.resx">
+      <DependentUpon>RestaurantInformation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Page\SmobilerMyForm.resx">
+      <DependentUpon>SmobilerMyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Page\SmobilerRechargeForm.resx">
+      <DependentUpon>SmobilerRechargeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Page\SmobilerSetPwdForm.resx">
+      <DependentUpon>SmobilerSetPwdForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Page\SmobilerUpdatePwdForm.resx">
+      <DependentUpon>SmobilerUpdatePwdForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Page\SmobilerFirst.resx">
+      <DependentUpon>SmobilerFirst.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="take_out_foodForm.resx">
+      <DependentUpon>take_out_foodForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\CJControl\IntegralIncomeControl.resx" />
+    <EmbeddedResource Include="UserControl\CJControl\SmobilerFirstControl.resx">
+      <DependentUpon>SmobilerFirstControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\Layout\BuyCar.resx">
+      <DependentUpon>BuyCar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\Layout\frmAddress.resx">
+      <DependentUpon>frmAddress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\Layout\frmResList.resx">
+      <DependentUpon>frmResList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\Layout\FrmResType.resx">
+      <DependentUpon>FrmResType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\Layout\LeaveTime.resx">
+      <DependentUpon>LeaveTime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\Layout\OrderType.resx">
+      <DependentUpon>OrderType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\Layout\TableWare.resx">
+      <DependentUpon>TableWare.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\Order\CouPonControl.resx">
+      <DependentUpon>CouPonControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\Order\OrderShowListControl.resx">
+      <DependentUpon>OrderShowListControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\Order\OrderUserControl.resx">
+      <DependentUpon>OrderUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\Order\ShowCouPonControl.resx">
+      <DependentUpon>ShowCouPonControl.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Smobiler_128.ico" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
