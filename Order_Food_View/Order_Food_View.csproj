@@ -186,6 +186,12 @@
     <Compile Include="Page\SmobilerUpdatePwdForm.Designer.cs">
       <DependentUpon>SmobilerUpdatePwdForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Page\TS_eat\TS_In_FoodForm.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Page\TS_eat\TS_In_FoodForm.Designer.cs">
+      <DependentUpon>TS_In_FoodForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -331,6 +337,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Page\SmobilerUpdatePwdForm.resx">
       <DependentUpon>SmobilerUpdatePwdForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Page\TS_eat\TS_In_FoodForm.resx">
+      <DependentUpon>TS_In_FoodForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

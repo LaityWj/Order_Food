@@ -19,19 +19,15 @@ namespace Order_Food_View.Page
 
         private void OrderListForm_Load(object sender, EventArgs e)
         {
-            for (int i = 0; i < tab_orderlist.Titles.Length; i++)
-            {
-                if (i == 0)
-                {
-                    //食堂的订单列表
-                    OrderList();
-                }
-                else
-                {
-                    //外卖的订单列表
-                    OrderList();
-                }
-            }
+
+            tab_orderlist.ScrollEnabled = true;
+            tab_orderlist.PageIndex = 0;
+            ////食堂的订单列表
+            //OrderList();
+
+
+            ////外卖的订单列表
+
 
         }
         public void OrderList()
@@ -51,10 +47,10 @@ namespace Order_Food_View.Page
             {
 
             }
-            tb.Rows.Add("FF20200303", "待付款", "1.png", "1.png", 1, 2, 3, 85, "取消订单", "立即付款");
-            tb.Rows.Add("FF20200303", "待收取", "2.png", "2.png", 1, 2, 3, 85, null, "确认收货");
-            tb.Rows.Add("FF20200303", "已完成", "1.png", "1.png", 1, 2, 3, 85, "删除订单", "再次购买");
-            tb.Rows.Add("FF20200303", "已取消", "2.png", "1.png", 1, 2, 3, 85, "删除订单", "再次购买");
+            tb.Rows.Add("FF20200303", "待付款", "cy2.png", "cy1.png", 1, 2, 3, 85, "取消订单", "立即付款");
+            tb.Rows.Add("FF20200303", "待收取", "cy2.png", "cy2.png", 1, 2, 3, 85, null, "确认收货");
+            tb.Rows.Add("FF20200303", "已完成", "cy2.png", "cy2.png", 1, 2, 3, 85, "删除订单", "再次购买");
+            tb.Rows.Add("FF20200303", "已取消", "cy2.png", "cy2.png", 1, 2, 3, 85, "删除订单", "再次购买");
 
             if (tb.Rows.Count > 0)
             {
@@ -90,16 +86,38 @@ namespace Order_Food_View.Page
             {
                 case "My":
                     SmobilerMyForm my = new SmobilerMyForm();
-                    this.Show(my);
+                    this.Show(my, (obj, arage) => { this.Close(); });
+                    //this.Show(my);
                     break;
                 case "Order":
-                    OrderListForm listForm = new OrderListForm();
-                    Show(listForm);
+                    OrderListForm orderForm1 = new OrderListForm();
+                    this.Show(orderForm1, (obj, arage) => { this.Close(); });
+                    //Show(orderForm1);
                     break;
                 case "Home":
                     SmobilerFirst first = new SmobilerFirst();
-                    this.Show(first);
+                    this.Show(first, (obj, arage) => { this.Close(); });
+                    //this.Show(first);
                     break;
+            }
+        }
+        /// <summary>
+        /// 根据索引显示
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void tab_orderlist_PageIndexChanged(object sender, EventArgs e)
+        {
+
+            if (tab_orderlist.PageIndex == 0)
+            {
+                //食堂的订单列表
+                OrderList();
+            }
+            else
+            {
+                //外卖的订单列表
+                OrderList();
             }
         }
     }

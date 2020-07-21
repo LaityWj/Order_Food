@@ -23,17 +23,19 @@ namespace Order_Food_View.UserControl
             this.lab_OrderNo = new Smobiler.Core.Controls.Label();
             this.lab_state = new Smobiler.Core.Controls.Label();
             this.imageButton1 = new Smobiler.Core.Controls.ImageButton();
-            this.lab_Sumnumber = new Smobiler.Core.Controls.Label();
             this.imageButton2 = new Smobiler.Core.Controls.ImageButton();
+            this.lab_Sumnumber = new Smobiler.Core.Controls.Label();
             this.label2 = new Smobiler.Core.Controls.Label();
-            this.panel6 = new Smobiler.Core.Controls.Panel();
-            this.lab_number = new Smobiler.Core.Controls.Label();
-            this.label3 = new Smobiler.Core.Controls.Label();
-            this.label4 = new Smobiler.Core.Controls.Label();
-            this.lab_num = new Smobiler.Core.Controls.Label();
-            this.btn_successOrder = new Smobiler.Core.Controls.Button();
-            this.btn_setOrder = new Smobiler.Core.Controls.Button();
             this.line2 = new Smobiler.Core.Controls.Line();
+            this.btn_setOrder = new Smobiler.Core.Controls.Button();
+            this.btn_successOrder = new Smobiler.Core.Controls.Button();
+            this.label3 = new Smobiler.Core.Controls.Label();
+            this.lab_sum = new Smobiler.Core.Controls.Label();
+            this.label4 = new Smobiler.Core.Controls.Label();
+            this.label5 = new Smobiler.Core.Controls.Label();
+            this.lab_money = new Smobiler.Core.Controls.Label();
+            this.label6 = new Smobiler.Core.Controls.Label();
+            this.label7 = new Smobiler.Core.Controls.Label();
             // 
             // panel1
             // 
@@ -42,159 +44,186 @@ namespace Order_Food_View.UserControl
             this.lab_OrderNo,
             this.lab_state,
             this.imageButton1,
-            this.lab_Sumnumber,
             this.imageButton2,
+            this.lab_Sumnumber,
             this.label2,
-            this.panel6,
-            this.btn_successOrder,
+            this.line2,
             this.btn_setOrder,
-            this.line2});
+            this.btn_successOrder,
+            this.label3,
+            this.lab_sum,
+            this.label4,
+            this.label5,
+            this.lab_money,
+            this.label6,
+            this.label7});
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(300, 217);
+            this.panel1.RaiseReachEnd = true;
+            this.panel1.Size = new System.Drawing.Size(300, 172);
             // 
             // label1
             // 
             this.label1.HorizontalAlignment = Smobiler.Core.Controls.HorizontalAlignment.Right;
             this.label1.Location = new System.Drawing.Point(0, 2);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 35);
+            this.label1.Size = new System.Drawing.Size(70, 26);
             this.label1.Text = "订单编号:";
             // 
             // lab_OrderNo
             // 
             this.lab_OrderNo.DataMember = "No";
             this.lab_OrderNo.DisplayMember = "No";
-            this.lab_OrderNo.Location = new System.Drawing.Point(70, 2);
+            this.lab_OrderNo.Location = new System.Drawing.Point(67, 2);
             this.lab_OrderNo.Name = "lab_OrderNo";
-            this.lab_OrderNo.Size = new System.Drawing.Size(100, 35);
+            this.lab_OrderNo.Size = new System.Drawing.Size(100, 26);
             this.lab_OrderNo.Text = "label2";
             // 
             // lab_state
             // 
             this.lab_state.DataMember = "state";
             this.lab_state.DisplayMember = "state";
+            this.lab_state.ForeColor = System.Drawing.Color.Gainsboro;
             this.lab_state.HorizontalAlignment = Smobiler.Core.Controls.HorizontalAlignment.Center;
-            this.lab_state.Location = new System.Drawing.Point(170, 2);
+            this.lab_state.Location = new System.Drawing.Point(219, 5);
             this.lab_state.Name = "lab_state";
-            this.lab_state.Size = new System.Drawing.Size(130, 35);
+            this.lab_state.Size = new System.Drawing.Size(82, 26);
             this.lab_state.Text = "label2";
             // 
             // imageButton1
             // 
             this.imageButton1.DataMember = "eatImg1";
             this.imageButton1.DisplayMember = "eatImg1";
-            this.imageButton1.Location = new System.Drawing.Point(11, 40);
+            this.imageButton1.Location = new System.Drawing.Point(5, 32);
             this.imageButton1.Name = "imageButton1";
-            this.imageButton1.Size = new System.Drawing.Size(70, 72);
+            this.imageButton1.Size = new System.Drawing.Size(53, 60);
+            // 
+            // imageButton2
+            // 
+            this.imageButton2.DataMember = "eatImg2";
+            this.imageButton2.DisplayMember = "eatImg2";
+            this.imageButton2.Location = new System.Drawing.Point(68, 32);
+            this.imageButton2.Name = "imageButton2";
+            this.imageButton2.Size = new System.Drawing.Size(53, 60);
             // 
             // lab_Sumnumber
             // 
             this.lab_Sumnumber.DataMember = "number1";
             this.lab_Sumnumber.DisplayMember = "number1";
             this.lab_Sumnumber.HorizontalAlignment = Smobiler.Core.Controls.HorizontalAlignment.Center;
-            this.lab_Sumnumber.Location = new System.Drawing.Point(11, 112);
+            this.lab_Sumnumber.Location = new System.Drawing.Point(22, 74);
             this.lab_Sumnumber.Name = "lab_Sumnumber";
-            this.lab_Sumnumber.Size = new System.Drawing.Size(70, 35);
+            this.lab_Sumnumber.Size = new System.Drawing.Size(31, 35);
             this.lab_Sumnumber.Text = "label2";
-            // 
-            // imageButton2
-            // 
-            this.imageButton2.DataMember = "eatImg2";
-            this.imageButton2.DisplayMember = "eatImg2";
-            this.imageButton2.Location = new System.Drawing.Point(86, 41);
-            this.imageButton2.Name = "imageButton2";
-            this.imageButton2.Size = new System.Drawing.Size(70, 72);
             // 
             // label2
             // 
             this.label2.DataMember = "number2";
             this.label2.DisplayMember = "number2";
             this.label2.HorizontalAlignment = Smobiler.Core.Controls.HorizontalAlignment.Center;
-            this.label2.Location = new System.Drawing.Point(86, 113);
+            this.label2.Location = new System.Drawing.Point(87, 74);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(70, 35);
+            this.label2.Size = new System.Drawing.Size(28, 35);
             this.label2.Text = "label2";
-            // 
-            // panel6
-            // 
-            this.panel6.Controls.AddRange(new Smobiler.Core.Controls.MobileControl[] {
-            this.lab_number,
-            this.label3,
-            this.label4,
-            this.lab_num});
-            this.panel6.Location = new System.Drawing.Point(0, 148);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(294, 25);
-            // 
-            // lab_number
-            // 
-            this.lab_number.DataMember = "sum";
-            this.lab_number.DisplayMember = "sum";
-            this.lab_number.HorizontalAlignment = Smobiler.Core.Controls.HorizontalAlignment.Center;
-            this.lab_number.Location = new System.Drawing.Point(147, 3);
-            this.lab_number.Name = "lab_number";
-            this.lab_number.Size = new System.Drawing.Size(22, 22);
-            this.lab_number.Text = "label7";
-            // 
-            // label3
-            // 
-            this.label3.HorizontalAlignment = Smobiler.Core.Controls.HorizontalAlignment.Right;
-            this.label3.Location = new System.Drawing.Point(125, 3);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(22, 22);
-            this.label3.Text = "共";
-            // 
-            // label4
-            // 
-            this.label4.HorizontalAlignment = Smobiler.Core.Controls.HorizontalAlignment.Right;
-            this.label4.Location = new System.Drawing.Point(152, 3);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(95, 22);
-            this.label4.Text = "件，合计:￥";
-            // 
-            // lab_num
-            // 
-            this.lab_num.DataMember = "money";
-            this.lab_num.DisplayMember = "money";
-            this.lab_num.Location = new System.Drawing.Point(245, 3);
-            this.lab_num.Name = "lab_num";
-            this.lab_num.Size = new System.Drawing.Size(56, 22);
-            this.lab_num.Text = "label7";
-            // 
-            // btn_successOrder
-            // 
-            this.btn_successOrder.BackColor = System.Drawing.Color.Red;
-            this.btn_successOrder.DataMember = "button2";
-            this.btn_successOrder.DisplayMember = "button2";
-            this.btn_successOrder.Location = new System.Drawing.Point(215, 184);
-            this.btn_successOrder.Name = "btn_successOrder";
-            this.btn_successOrder.Size = new System.Drawing.Size(77, 30);
-            this.btn_successOrder.Text = "button1";
-            // 
-            // btn_setOrder
-            // 
-            this.btn_setOrder.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btn_setOrder.BorderColor = System.Drawing.Color.White;
-            this.btn_setOrder.DataMember = "button1";
-            this.btn_setOrder.DisplayMember = "button1";
-            this.btn_setOrder.ForeColor = System.Drawing.Color.Black;
-            this.btn_setOrder.Location = new System.Drawing.Point(130, 184);
-            this.btn_setOrder.Name = "btn_setOrder";
-            this.btn_setOrder.Size = new System.Drawing.Size(77, 30);
-            this.btn_setOrder.Text = "button2";
             // 
             // line2
             // 
             this.line2.BackColor = System.Drawing.Color.DarkGray;
-            this.line2.Location = new System.Drawing.Point(0, 176);
+            this.line2.Location = new System.Drawing.Point(0, 127);
             this.line2.Name = "line2";
             this.line2.Size = new System.Drawing.Size(300, 1);
             // 
+            // btn_setOrder
+            // 
+            this.btn_setOrder.BackColor = System.Drawing.Color.White;
+            this.btn_setOrder.Border = new Smobiler.Core.Controls.Border(1F);
+            this.btn_setOrder.BorderColor = System.Drawing.Color.Red;
+            this.btn_setOrder.BorderRadius = 0;
+            this.btn_setOrder.DataMember = "button1";
+            this.btn_setOrder.DisplayMember = "button1";
+            this.btn_setOrder.ForeColor = System.Drawing.Color.Black;
+            this.btn_setOrder.Location = new System.Drawing.Point(138, 132);
+            this.btn_setOrder.Name = "btn_setOrder";
+            this.btn_setOrder.Size = new System.Drawing.Size(77, 30);
+            this.btn_setOrder.Text = "button2";
+            // 
+            // btn_successOrder
+            // 
+            this.btn_successOrder.BackColor = System.Drawing.Color.Red;
+            this.btn_successOrder.BorderRadius = 0;
+            this.btn_successOrder.DataMember = "button2";
+            this.btn_successOrder.DisplayMember = "button2";
+            this.btn_successOrder.Location = new System.Drawing.Point(219, 132);
+            this.btn_successOrder.Name = "btn_successOrder";
+            this.btn_successOrder.Size = new System.Drawing.Size(77, 30);
+            this.btn_successOrder.Text = "button1";
+            // 
+            // label3
+            // 
+            this.label3.ForeColor = System.Drawing.Color.Gray;
+            this.label3.Location = new System.Drawing.Point(166, 103);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(20, 20);
+            this.label3.Text = "共";
+            // 
+            // lab_sum
+            // 
+            this.lab_sum.DataMember = "sum";
+            this.lab_sum.DisplayMember = "sum";
+            this.lab_sum.ForeColor = System.Drawing.Color.Gray;
+            this.lab_sum.Location = new System.Drawing.Point(182, 103);
+            this.lab_sum.Name = "lab_sum";
+            this.lab_sum.Size = new System.Drawing.Size(20, 20);
+            this.lab_sum.Text = "label4";
+            // 
+            // label4
+            // 
+            this.label4.BorderColor = System.Drawing.Color.Gray;
+            this.label4.Location = new System.Drawing.Point(194, 103);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(78, 20);
+            this.label4.Text = "件，合计：";
+            // 
+            // label5
+            // 
+            this.label5.ForeColor = System.Drawing.Color.Red;
+            this.label5.Location = new System.Drawing.Point(250, 102);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(20, 20);
+            this.label5.Text = "￥";
+            // 
+            // lab_money
+            // 
+            this.lab_money.DataMember = "money";
+            this.lab_money.DisplayMember = "money";
+            this.lab_money.ForeColor = System.Drawing.Color.Red;
+            this.lab_money.Location = new System.Drawing.Point(261, 102);
+            this.lab_money.Name = "lab_money";
+            this.lab_money.Size = new System.Drawing.Size(20, 20);
+            this.lab_money.Text = "label6";
+            // 
+            // label6
+            // 
+            this.label6.HorizontalAlignment = Smobiler.Core.Controls.HorizontalAlignment.Center;
+            this.label6.Location = new System.Drawing.Point(12, 74);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(31, 35);
+            this.label6.Text = "×";
+            // 
+            // label7
+            // 
+            this.label7.HorizontalAlignment = Smobiler.Core.Controls.HorizontalAlignment.Center;
+            this.label7.Location = new System.Drawing.Point(76, 74);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(31, 35);
+            this.label7.Text = "×";
+            // 
             // OrderShowListControl
             // 
+            this.Border = new Smobiler.Core.Controls.Border(0F, 0F, 0F, 10F);
+            this.BorderColor = System.Drawing.Color.Gainsboro;
             this.Controls.AddRange(new Smobiler.Core.Controls.MobileControl[] {
             this.panel1});
-            this.Size = new System.Drawing.Size(300, 221);
+            this.Size = new System.Drawing.Size(300, 172);
             this.Load += new System.EventHandler(this.OrderShowListControl_Load);
             this.Name = "OrderShowListControl";
 
@@ -205,16 +234,18 @@ namespace Order_Food_View.UserControl
         private Smobiler.Core.Controls.Label lab_OrderNo;
         private Smobiler.Core.Controls.Label lab_state;
         private Smobiler.Core.Controls.ImageButton imageButton1;
-        private Smobiler.Core.Controls.Label lab_Sumnumber;
         private Smobiler.Core.Controls.ImageButton imageButton2;
+        private Smobiler.Core.Controls.Label lab_Sumnumber;
         private Smobiler.Core.Controls.Label label2;
-        private Smobiler.Core.Controls.Panel panel6;
-        private Smobiler.Core.Controls.Label lab_number;
-        private Smobiler.Core.Controls.Button btn_successOrder;
-        private Smobiler.Core.Controls.Button btn_setOrder;
-        private Smobiler.Core.Controls.Label label3;
         private Smobiler.Core.Controls.Line line2;
+        private Smobiler.Core.Controls.Button btn_setOrder;
+        private Smobiler.Core.Controls.Button btn_successOrder;
+        private Smobiler.Core.Controls.Label label3;
+        private Smobiler.Core.Controls.Label lab_sum;
         private Smobiler.Core.Controls.Label label4;
-        private Smobiler.Core.Controls.Label lab_num;
+        private Smobiler.Core.Controls.Label label5;
+        private Smobiler.Core.Controls.Label lab_money;
+        private Smobiler.Core.Controls.Label label6;
+        private Smobiler.Core.Controls.Label label7;
     }
 }
