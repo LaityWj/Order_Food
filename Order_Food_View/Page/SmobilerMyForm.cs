@@ -29,15 +29,18 @@ namespace Order_Food_View.Page
             {
                 case "My":
                     SmobilerMyForm my = new SmobilerMyForm();
-                    this.Show(my);
+                    this.Form.Show(my, (obj, arage) => { this.Close(); });
+                   // this.Show(my);
                     break;
                 case "Order":
                     OrderListForm orderForm1 = new OrderListForm();
-                    Show(orderForm1);
+                    this.Form.Show(orderForm1, (obj, arage) => { this.Close(); });
+                    //Show(orderForm1);
                     break;
                 case "Home":
                     SmobilerFirst first = new SmobilerFirst();
-                    this.Show(first);
+                    this.Form.Show(first, (obj, arage) => { this.Close(); });
+                    //this.Show(first);
                     break;
             }
         }

@@ -5,7 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using Order_Food_View.Page;
-using Order_Food_View.Page.JFPage;
+using Order_Food_View.Page.TS_eat;
 using Smobiler.Core;
 using Smobiler.Core.Controls;
 
@@ -57,15 +57,18 @@ namespace Order_Food_View
             {
                 case "My":
                     SmobilerMyForm my = new SmobilerMyForm();
-                    this.Show(my);
+                    this.Form.Show(my, (obj, arage) => { this.Close(); });
+                    // this.Show(my);
                     break;
                 case "Order":
-                    OrderListForm orderForm = new OrderListForm();
-                    Show(orderForm);
+                    OrderListForm orderForm1 = new OrderListForm();
+                    this.Form.Show(orderForm1, (obj, arage) => { this.Close(); });
+                    //Show(orderForm1);
                     break;
                 case "Home":
                     SmobilerFirst first = new SmobilerFirst();
-                    this.Show(first);
+                    this.Form.Show(first, (obj, arage) => { this.Close(); });
+                    //this.Show(first);
                     break;
             }
         }
@@ -86,7 +89,8 @@ namespace Order_Food_View
         /// <param name="e"></param>
         private void ShiTang_Press(object sender, EventArgs e)
         {
-
+            TS_In_FoodForm tS_In_Food = new TS_In_FoodForm();
+            Show(tS_In_Food);
         }
         /// <summary>
         /// 积分商城

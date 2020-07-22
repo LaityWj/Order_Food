@@ -34,7 +34,7 @@ namespace Order_Food_View.Layout
 
                 take_out_foodForm form = new take_out_foodForm();
                 //Button btn = (Button)form.Controls.Find("BtnClient");
-                //btn.Text = "去结算";
+                //btn.Text = "去结算"; 
                 //btn.Enabled = true;
                 form.FoodType += LoadFood;
             }

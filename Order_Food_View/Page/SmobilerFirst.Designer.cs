@@ -19,9 +19,9 @@ namespace Order_Food_View
         [System.Diagnostics.DebuggerStepThrough()]
         private void InitializeComponent()
         {
-            Smobiler.Core.Controls.ToolBarItem toolBarItem1 = new Smobiler.Core.Controls.ToolBarItem();
-            Smobiler.Core.Controls.ToolBarItem toolBarItem2 = new Smobiler.Core.Controls.ToolBarItem();
-            Smobiler.Core.Controls.ToolBarItem toolBarItem3 = new Smobiler.Core.Controls.ToolBarItem();
+            Smobiler.Core.Controls.ToolBarItem toolBarItem4 = new Smobiler.Core.Controls.ToolBarItem();
+            Smobiler.Core.Controls.ToolBarItem toolBarItem5 = new Smobiler.Core.Controls.ToolBarItem();
+            Smobiler.Core.Controls.ToolBarItem toolBarItem6 = new Smobiler.Core.Controls.ToolBarItem();
             this.label1 = new Smobiler.Core.Controls.Label();
             this.image1 = new Smobiler.Core.Controls.Image();
             this.restaurant_Name = new Smobiler.Core.Controls.Label();
@@ -134,7 +134,7 @@ namespace Order_Food_View
             this.canting.Location = new System.Drawing.Point(0, 355);
             this.canting.Name = "canting";
             this.canting.ResourceID = "ct1";
-            this.canting.Size = new System.Drawing.Size(102, 80);
+            this.canting.Size = new System.Drawing.Size(102, 101);
             this.canting.Text = "餐厅信息";
             this.canting.Press += new System.EventHandler(this.canting_Press);
             // 
@@ -143,7 +143,7 @@ namespace Order_Food_View
             this.jifen.Location = new System.Drawing.Point(102, 355);
             this.jifen.Name = "jifen";
             this.jifen.ResourceID = "jf";
-            this.jifen.Size = new System.Drawing.Size(104, 80);
+            this.jifen.Size = new System.Drawing.Size(104, 101);
             this.jifen.Text = "积分商城";
             this.jifen.Press += new System.EventHandler(this.jifen_Press);
             // 
@@ -152,7 +152,7 @@ namespace Order_Food_View
             this.youhui.Location = new System.Drawing.Point(206, 355);
             this.youhui.Name = "youhui";
             this.youhui.ResourceID = "yhq";
-            this.youhui.Size = new System.Drawing.Size(94, 80);
+            this.youhui.Size = new System.Drawing.Size(94, 101);
             this.youhui.Text = "优惠券";
             // 
             // phoneButton1
@@ -167,38 +167,38 @@ namespace Order_Food_View
             // 
             this.line1.BackColor = System.Drawing.Color.LightGray;
             this.line1.BorderStyle = Smobiler.Core.Controls.BorderStyle.Dotted;
-            this.line1.Location = new System.Drawing.Point(0, 442);
+            this.line1.Location = new System.Drawing.Point(0, 456);
             this.line1.Name = "line1";
             this.line1.Size = new System.Drawing.Size(300, 1);
             // 
             // toolBar1
             // 
-            toolBarItem1.IconID = "home";
-            toolBarItem1.ImageType = Smobiler.Core.Controls.ImageEx.ImageStyle.FontIcon;
-            toolBarItem1.Name = "Home";
-            toolBarItem1.SelectIconColor = System.Drawing.Color.Red;
-            toolBarItem1.SelectIconID = "home";
-            toolBarItem1.Text = "主页";
-            toolBarItem2.IconID = "file-text-o";
-            toolBarItem2.ImageType = Smobiler.Core.Controls.ImageEx.ImageStyle.FontIcon;
-            toolBarItem2.Name = "Order";
-            toolBarItem2.SelectIconColor = System.Drawing.Color.Red;
-            toolBarItem2.SelectIconID = "file-text-o";
-            toolBarItem2.Text = "订单";
-            toolBarItem3.IconID = "user";
-            toolBarItem3.ImageType = Smobiler.Core.Controls.ImageEx.ImageStyle.FontIcon;
-            toolBarItem3.Name = "My";
-            toolBarItem3.SelectIconColor = System.Drawing.Color.Red;
-            toolBarItem3.SelectIconID = "user";
-            toolBarItem3.Text = "我的";
+            toolBarItem4.IconID = "home";
+            toolBarItem4.ImageType = Smobiler.Core.Controls.ImageEx.ImageStyle.FontIcon;
+            toolBarItem4.Name = "Home";
+            toolBarItem4.SelectIconColor = System.Drawing.Color.Red;
+            toolBarItem4.SelectIconID = "home";
+            toolBarItem4.Text = "主页";
+            toolBarItem5.IconID = "file-text-o";
+            toolBarItem5.ImageType = Smobiler.Core.Controls.ImageEx.ImageStyle.FontIcon;
+            toolBarItem5.Name = "Order";
+            toolBarItem5.SelectIconColor = System.Drawing.Color.Red;
+            toolBarItem5.SelectIconID = "file-text-o";
+            toolBarItem5.Text = "订单";
+            toolBarItem6.IconID = "user";
+            toolBarItem6.ImageType = Smobiler.Core.Controls.ImageEx.ImageStyle.FontIcon;
+            toolBarItem6.Name = "My";
+            toolBarItem6.SelectIconColor = System.Drawing.Color.Red;
+            toolBarItem6.SelectIconID = "user";
+            toolBarItem6.Text = "我的";
             this.toolBar1.Items.AddRange(new Smobiler.Core.Controls.ToolBarItem[] {
-            toolBarItem1,
-            toolBarItem2,
-            toolBarItem3});
+            toolBarItem4,
+            toolBarItem5,
+            toolBarItem6});
             this.toolBar1.ItemWidth = 40;
             this.toolBar1.Location = new System.Drawing.Point(162, 459);
             this.toolBar1.Name = "toolBar1";
-            this.toolBar1.Size = new System.Drawing.Size(100, 50);
+            this.toolBar1.Size = new System.Drawing.Size(100, 42);
             this.toolBar1.ToolbarItemClick += new Smobiler.Core.Controls.ToolbarItemClickEventHandler(this.toolBar1_ToolbarItemClick);
             // 
             // image2
