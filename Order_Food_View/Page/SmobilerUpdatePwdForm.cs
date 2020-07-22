@@ -21,8 +21,7 @@ namespace Order_Food_View.Page
         /// <param name="e"></param>
         private void back_my_Press(object sender, EventArgs e)
         {
-            SmobilerMyForm  myForm = new SmobilerMyForm();
-            Show(myForm);
+            this.Close();
         }
         /// <summary>
         /// 跳转到修改密码页

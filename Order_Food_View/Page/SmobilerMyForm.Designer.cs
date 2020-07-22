@@ -34,6 +34,9 @@ namespace Order_Food_View.Page
             this.panel2 = new Smobiler.Core.Controls.Panel();
             this.label2 = new Smobiler.Core.Controls.Label();
             this.btn_SetUp = new Smobiler.Core.Controls.ImageButton();
+            this.panel3 = new Smobiler.Core.Controls.Panel();
+            this.label3 = new Smobiler.Core.Controls.Label();
+            this.imgbtn_address = new Smobiler.Core.Controls.ImageButton();
             // 
             // label1
             // 
@@ -169,6 +172,34 @@ namespace Order_Food_View.Page
             this.btn_SetUp.Size = new System.Drawing.Size(35, 35);
             this.btn_SetUp.Press += new System.EventHandler(this.btn_SetUp_Press);
             // 
+            // panel3
+            // 
+            this.panel3.Border = new Smobiler.Core.Controls.Border(0F, 0F, 0F, 1F);
+            this.panel3.BorderColor = System.Drawing.Color.LightGray;
+            this.panel3.Controls.AddRange(new Smobiler.Core.Controls.MobileControl[] {
+            this.label3,
+            this.imgbtn_address});
+            this.panel3.Location = new System.Drawing.Point(0, 288);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(300, 70);
+            // 
+            // label3
+            // 
+            this.label3.FontSize = 22F;
+            this.label3.Location = new System.Drawing.Point(10, 18);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(100, 35);
+            this.label3.Text = "收货地址";
+            // 
+            // imgbtn_address
+            // 
+            this.imgbtn_address.ImageType = Smobiler.Core.Controls.ImageEx.ImageStyle.FontIcon;
+            this.imgbtn_address.Location = new System.Drawing.Point(241, 21);
+            this.imgbtn_address.Name = "imgbtn_address";
+            this.imgbtn_address.ResourceID = "angle-right";
+            this.imgbtn_address.Size = new System.Drawing.Size(35, 35);
+            this.imgbtn_address.Press += new System.EventHandler(this.imgbtn_address_Press);
+            // 
             // SmobilerMyForm
             // 
             this.BackColor = System.Drawing.Color.White;
@@ -176,7 +207,8 @@ namespace Order_Food_View.Page
             this.label1,
             this.panel1,
             this.toolBar1,
-            this.panel2});
+            this.panel2,
+            this.panel3});
             this.Name = "SmobilerMyForm";
 
         }
@@ -194,5 +226,8 @@ namespace Order_Food_View.Page
         private Smobiler.Core.Controls.Panel panel2;
         private Smobiler.Core.Controls.Label label2;
         private Smobiler.Core.Controls.ImageButton btn_SetUp;
+        private Smobiler.Core.Controls.Panel panel3;
+        private Smobiler.Core.Controls.Label label3;
+        private Smobiler.Core.Controls.ImageButton imgbtn_address;
     }
 }

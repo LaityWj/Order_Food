@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using Order_Food_View.Page;
+using Order_Food_View.Page.JFPage;
 using Smobiler.Core;
 using Smobiler.Core.Controls;
 
@@ -86,6 +87,16 @@ namespace Order_Food_View
         private void ShiTang_Press(object sender, EventArgs e)
         {
 
+        }
+        /// <summary>
+        /// 积分商城
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void jifen_Press(object sender, EventArgs e)
+        {
+            JFMallForm jFMall = new JFMallForm();
+            Show(jFMall);
         }
     }
 }

@@ -1,8 +1,8 @@
 ﻿using System;
 using Smobiler.Core;
-namespace Order_Food_View.UserControl
+namespace Order_Food_View.UserControl.CJControl
 {
-    partial class IntegralIncomeControl : Smobiler.Core.Controls.MobileUserControl
+    partial class JFUserControl : Smobiler.Core.Controls.MobileUserControl
     {
         #region "SmobilerUserControl generated code "
 
@@ -47,7 +47,7 @@ namespace Order_Food_View.UserControl
             this.lab_XFTime.DataMember = "XFTime";
             this.lab_XFTime.DisplayMember = "XFTime";
             this.lab_XFTime.ForeColor = System.Drawing.Color.DarkGray;
-            this.lab_XFTime.Location = new System.Drawing.Point(0, 27);
+            this.lab_XFTime.Location = new System.Drawing.Point(0, 28);
             this.lab_XFTime.Name = "lab_XFTime";
             this.lab_XFTime.Size = new System.Drawing.Size(175, 18);
             this.lab_XFTime.Text = "label1";
@@ -58,18 +58,17 @@ namespace Order_Food_View.UserControl
             this.lab_XFYe.DisplayMember = "XFYe";
             this.lab_XFYe.FontSize = 14F;
             this.lab_XFYe.ForeColor = System.Drawing.Color.Red;
-            this.lab_XFYe.Location = new System.Drawing.Point(252, 0);
+            this.lab_XFYe.Location = new System.Drawing.Point(256, 1);
             this.lab_XFYe.Name = "lab_XFYe";
-            this.lab_XFYe.Size = new System.Drawing.Size(60, 27);
+            this.lab_XFYe.Size = new System.Drawing.Size(44, 27);
             this.lab_XFYe.Text = "label1";
             // 
-            // IntegralIncomeControl
+            // JFUserControl
             // 
-            this.BackColor = System.Drawing.Color.White;
             this.Controls.AddRange(new Smobiler.Core.Controls.MobileControl[] {
             this.panel1});
             this.Size = new System.Drawing.Size(300, 46);
-            this.Name = "IntegralIncomeControl";
+            this.Name = "JFUserControl";
 
         }
         #endregion

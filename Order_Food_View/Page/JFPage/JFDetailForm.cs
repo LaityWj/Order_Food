@@ -5,17 +5,17 @@ using System.Text;
 using Smobiler.Core;
 using Smobiler.Core.Controls;
 
-namespace Order_Food_View.Page
+namespace Order_Food_View.Page.JFPage
 {
-    partial class SmobilerSetPwdForm : Smobiler.Core.Controls.MobileForm
+    partial class JFDetailForm : Smobiler.Core.Controls.MobileForm
     {
-        public SmobilerSetPwdForm() : base()
+        public JFDetailForm() : base()
         {
             //This call is required by the SmobilerForm.
             InitializeComponent();
         }
         /// <summary>
-        /// 返回到设置页面
+        /// 返回积分页
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -24,14 +24,13 @@ namespace Order_Food_View.Page
             this.Close();
         }
         /// <summary>
-        /// 提交成功跳转到我的页面
+        /// 积分详情页面加载事件
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btn_save_Press(object sender, EventArgs e)
+        private void JFDetailForm_Load(object sender, EventArgs e)
         {
-            SmobilerMyForm my = new SmobilerMyForm();
-            Show(my);
+
         }
     }
 }

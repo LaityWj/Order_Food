@@ -120,12 +120,31 @@
     </Compile>
     <Compile Include="HelperClass\Helper.cs" />
     <Compile Include="HelperClass\HttpClientHelper.cs" />
-    <Compile Include="HttpClientHelper.cs" />
     <Compile Include="MobileGlobal.cs" />
-    <Compile Include="Page\IntegralForm.cs">
+    <Compile Include="Page\JFPage\AddressForm.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Page\IntegralForm.Designer.cs" />
+    <Compile Include="Page\JFPage\AddressForm.Designer.cs">
+      <DependentUpon>AddressForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Page\JFPage\JFDetailForm.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Page\JFPage\JFDetailForm.Designer.cs">
+      <DependentUpon>JFDetailForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Page\JFPage\JFForm.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Page\JFPage\JFForm.Designer.cs">
+      <DependentUpon>JFForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Page\JFPage\JFMallForm.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Page\JFPage\JFMallForm.Designer.cs">
+      <DependentUpon>JFMallForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Page\OrderPage\OrderForm.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -211,10 +230,30 @@
     <Compile Include="take_out_foodForm.designer.cs">
       <DependentUpon>take_out_foodForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControl\CJControl\IntegralIncomeControl.cs">
+    <Compile Include="UserControl\CJControl\AddressControl.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="UserControl\CJControl\IntegralIncomeControl.Designer.cs" />
+    <Compile Include="UserControl\CJControl\AddressControl.Designer.cs">
+      <DependentUpon>AddressControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\CJControl\JFDetailUserControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControl\CJControl\JFDetailUserControl.Designer.cs">
+      <DependentUpon>JFDetailUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\CJControl\JFMallControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControl\CJControl\JFMallControl.Designer.cs">
+      <DependentUpon>JFMallControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\CJControl\JFUserControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControl\CJControl\JFUserControl.Designer.cs">
+      <DependentUpon>JFUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControl\CJControl\SmobilerFirstControl.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -301,7 +340,18 @@
     <EmbeddedResource Include="frmSetting.resx">
       <DependentUpon>frmSetting.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Page\IntegralForm.resx" />
+    <EmbeddedResource Include="Page\JFPage\AddressForm.resx">
+      <DependentUpon>AddressForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Page\JFPage\JFDetailForm.resx">
+      <DependentUpon>JFDetailForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Page\JFPage\JFForm.resx">
+      <DependentUpon>JFForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Page\JFPage\JFMallForm.resx">
+      <DependentUpon>JFMallForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Page\OrderPage\OrderForm.resx">
       <DependentUpon>OrderForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -342,7 +392,18 @@
     <EmbeddedResource Include="take_out_foodForm.resx">
       <DependentUpon>take_out_foodForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControl\CJControl\IntegralIncomeControl.resx" />
+    <EmbeddedResource Include="UserControl\CJControl\AddressControl.resx">
+      <DependentUpon>AddressControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\CJControl\JFDetailUserControl.resx">
+      <DependentUpon>JFDetailUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\CJControl\JFMallControl.resx">
+      <DependentUpon>JFMallControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\CJControl\JFUserControl.resx">
+      <DependentUpon>JFUserControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControl\CJControl\SmobilerFirstControl.resx">
       <DependentUpon>SmobilerFirstControl.cs</DependentUpon>
     </EmbeddedResource>

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Order_Food_View.Page.JFPage;
 using Smobiler.Core;
 using Smobiler.Core.Controls;
 
@@ -67,8 +68,18 @@ namespace Order_Food_View.Page
         /// <param name="e"></param>
         private void btn_JiFen_Press(object sender, EventArgs e)
         {
-            IntegralForm integral = new IntegralForm();
+            JFForm integral = new JFForm();
             Show(integral);
+        }
+        /// <summary>
+        /// 跳转到地址页面
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void imgbtn_address_Press(object sender, EventArgs e)
+        {
+            AddressForm address = new AddressForm();
+            Show(address);
         }
     }
 }

@@ -145,6 +145,7 @@ namespace Order_Food_View
             this.jifen.ResourceID = "jf";
             this.jifen.Size = new System.Drawing.Size(104, 80);
             this.jifen.Text = "积分商城";
+            this.jifen.Press += new System.EventHandler(this.jifen_Press);
             // 
             // youhui
             // 

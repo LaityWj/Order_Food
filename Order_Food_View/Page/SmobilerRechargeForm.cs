@@ -21,8 +21,7 @@ namespace Order_Food_View.Page
         /// <param name="e"></param>
         private void back_my_Press(object sender, EventArgs e)
         {
-            SmobilerMyForm my = new SmobilerMyForm();
-            Show(my);
+            this.Close();
         }
         /// <summary>
         /// 点击100金额
@@ -44,7 +43,7 @@ namespace Order_Food_View.Page
         {
             two.ForeColor = System.Drawing.Color.Red;
             two.BorderColor = System.Drawing.Color.Red;
-            MessageBox.Show(one.Text);
+            MessageBox.Show(two.Text);
         }
         /// <summary>
         /// 点击充值跳转到我的页面
@@ -65,7 +64,7 @@ namespace Order_Food_View.Page
         {
             three.ForeColor = System.Drawing.Color.Red;
             three.BorderColor = System.Drawing.Color.Red;
-            MessageBox.Show(one.Text);
+            MessageBox.Show(three.Text);
         }
         /// <summary>
         /// 点击500金额
@@ -76,7 +75,7 @@ namespace Order_Food_View.Page
         {
             four.ForeColor = System.Drawing.Color.Red;
             four.BorderColor = System.Drawing.Color.Red;
-            MessageBox.Show(one.Text);
+            MessageBox.Show(four.Text);
         }
         /// <summary>
         /// 点击800金额
@@ -87,7 +86,7 @@ namespace Order_Food_View.Page
         {
             five.ForeColor = System.Drawing.Color.Red;
             five.BorderColor = System.Drawing.Color.Red;
-            MessageBox.Show(one.Text);
+            MessageBox.Show(five.Text);
         }
         /// <summary>
         /// 点击1000金额
@@ -98,7 +97,7 @@ namespace Order_Food_View.Page
         {
             six.ForeColor = System.Drawing.Color.Red;
             six.BorderColor = System.Drawing.Color.Red;
-            MessageBox.Show(one.Text);
+            MessageBox.Show(six.Text);
         }
     }
 }
