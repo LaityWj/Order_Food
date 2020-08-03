@@ -20,8 +20,8 @@ namespace Order_Food_View.UserControl.CJControl
         {
             this.panel1 = new Smobiler.Core.Controls.Panel();
             this.ck_state = new Smobiler.Core.Controls.CheckBox();
-            this.lab_user_name = new Smobiler.Core.Controls.Label();
-            this.lab_User_Phone = new Smobiler.Core.Controls.Label();
+            this.lab_Shou_Name = new Smobiler.Core.Controls.Label();
+            this.lab_Shou_Tel = new Smobiler.Core.Controls.Label();
             this.lab_Address_Detail = new Smobiler.Core.Controls.Label();
             this.imgbtn_detail = new Smobiler.Core.Controls.ImageButton();
             // 
@@ -31,8 +31,8 @@ namespace Order_Food_View.UserControl.CJControl
             this.panel1.BorderColor = System.Drawing.Color.LightGray;
             this.panel1.Controls.AddRange(new Smobiler.Core.Controls.MobileControl[] {
             this.ck_state,
-            this.lab_user_name,
-            this.lab_User_Phone,
+            this.lab_Shou_Name,
+            this.lab_Shou_Tel,
             this.lab_Address_Detail,
             this.imgbtn_detail});
             this.panel1.Name = "panel1";
@@ -46,25 +46,25 @@ namespace Order_Food_View.UserControl.CJControl
             this.ck_state.Style = Smobiler.Core.Controls.CheckBoxStyle.Circular;
             this.ck_state.TintColor = System.Drawing.Color.Black;
             // 
-            // lab_user_name
+            // lab_Shou_Name
             // 
-            this.lab_user_name.DataMember = "User_Name";
-            this.lab_user_name.DisplayMember = "User_Name";
-            this.lab_user_name.FontSize = 15F;
-            this.lab_user_name.Location = new System.Drawing.Point(52, 25);
-            this.lab_user_name.Name = "lab_user_name";
-            this.lab_user_name.Size = new System.Drawing.Size(100, 19);
-            this.lab_user_name.Text = "label1";
+            this.lab_Shou_Name.DataMember = "Shou_Name";
+            this.lab_Shou_Name.DisplayMember = "Shou_Name";
+            this.lab_Shou_Name.FontSize = 15F;
+            this.lab_Shou_Name.Location = new System.Drawing.Point(52, 25);
+            this.lab_Shou_Name.Name = "lab_Shou_Name";
+            this.lab_Shou_Name.Size = new System.Drawing.Size(100, 19);
+            this.lab_Shou_Name.Text = "label1";
             // 
-            // lab_User_Phone
+            // lab_Shou_Tel
             // 
-            this.lab_User_Phone.DataMember = "User_Phone";
-            this.lab_User_Phone.DisplayMember = "User_Phone";
-            this.lab_User_Phone.FontSize = 15F;
-            this.lab_User_Phone.Location = new System.Drawing.Point(139, 25);
-            this.lab_User_Phone.Name = "lab_User_Phone";
-            this.lab_User_Phone.Size = new System.Drawing.Size(100, 19);
-            this.lab_User_Phone.Text = "label1";
+            this.lab_Shou_Tel.DataMember = "Shou_Tel";
+            this.lab_Shou_Tel.DisplayMember = "Shou_Tel";
+            this.lab_Shou_Tel.FontSize = 15F;
+            this.lab_Shou_Tel.Location = new System.Drawing.Point(139, 25);
+            this.lab_Shou_Tel.Name = "lab_Shou_Tel";
+            this.lab_Shou_Tel.Size = new System.Drawing.Size(100, 19);
+            this.lab_Shou_Tel.Text = "label1";
             // 
             // lab_Address_Detail
             // 
@@ -73,7 +73,7 @@ namespace Order_Food_View.UserControl.CJControl
             this.lab_Address_Detail.FontSize = 15F;
             this.lab_Address_Detail.Location = new System.Drawing.Point(52, 61);
             this.lab_Address_Detail.Name = "lab_Address_Detail";
-            this.lab_Address_Detail.Size = new System.Drawing.Size(162, 21);
+            this.lab_Address_Detail.Size = new System.Drawing.Size(207, 21);
             this.lab_Address_Detail.Text = "label1";
             // 
             // imgbtn_detail
@@ -96,8 +96,8 @@ namespace Order_Food_View.UserControl.CJControl
 
         private Smobiler.Core.Controls.Panel panel1;
         private Smobiler.Core.Controls.CheckBox ck_state;
-        private Smobiler.Core.Controls.Label lab_user_name;
-        private Smobiler.Core.Controls.Label lab_User_Phone;
+        private Smobiler.Core.Controls.Label lab_Shou_Name;
+        private Smobiler.Core.Controls.Label lab_Shou_Tel;
         private Smobiler.Core.Controls.Label lab_Address_Detail;
         private Smobiler.Core.Controls.ImageButton imgbtn_detail;
     }

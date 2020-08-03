@@ -28,6 +28,7 @@ namespace Order_Food_View.UserControl.CJControl
             this.label3 = new Smobiler.Core.Controls.Label();
             this.lab_time = new Smobiler.Core.Controls.Label();
             this.imageButton1 = new Smobiler.Core.Controls.ImageButton();
+            this.txt_Id = new Smobiler.Core.Controls.TextBox();
             // 
             // panel1
             // 
@@ -42,7 +43,8 @@ namespace Order_Food_View.UserControl.CJControl
             this.lab_num,
             this.label3,
             this.lab_time,
-            this.imageButton1});
+            this.imageButton1,
+            this.txt_Id});
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(400, 190);
             // 
@@ -55,11 +57,12 @@ namespace Order_Food_View.UserControl.CJControl
             this.btn_DH.Name = "btn_DH";
             this.btn_DH.Size = new System.Drawing.Size(92, 33);
             this.btn_DH.Text = "立即兑换";
+            this.btn_DH.Press += new System.EventHandler(this.btn_DH_Press);
             // 
             // lab_name
             // 
-            this.lab_name.DataMember = "Name";
-            this.lab_name.DisplayMember = "Name";
+            this.lab_name.DataMember = "Menu_Name";
+            this.lab_name.DisplayMember = "Menu_Name";
             this.lab_name.FontSize = 18F;
             this.lab_name.Location = new System.Drawing.Point(142, 23);
             this.lab_name.Name = "lab_name";
@@ -76,8 +79,8 @@ namespace Order_Food_View.UserControl.CJControl
             // 
             // lab_jf
             // 
-            this.lab_jf.DataMember = "JF";
-            this.lab_jf.DisplayMember = "JF";
+            this.lab_jf.DataMember = "Need_JF";
+            this.lab_jf.DisplayMember = "Need_JF";
             this.lab_jf.FontSize = 18F;
             this.lab_jf.ForeColor = System.Drawing.Color.Red;
             this.lab_jf.Location = new System.Drawing.Point(215, 52);
@@ -95,8 +98,8 @@ namespace Order_Food_View.UserControl.CJControl
             // 
             // lab_num
             // 
-            this.lab_num.DataMember = "num";
-            this.lab_num.DisplayMember = "num";
+            this.lab_num.DataMember = "Number";
+            this.lab_num.DisplayMember = "Number";
             this.lab_num.FontSize = 18F;
             this.lab_num.ForeColor = System.Drawing.Color.Red;
             this.lab_num.Location = new System.Drawing.Point(215, 78);
@@ -115,8 +118,8 @@ namespace Order_Food_View.UserControl.CJControl
             // 
             // lab_time
             // 
-            this.lab_time.DataMember = "time";
-            this.lab_time.DisplayMember = "time";
+            this.lab_time.DataMember = "NeedDateTime";
+            this.lab_time.DisplayMember = "NeedDateTime";
             this.lab_time.FontSize = 18F;
             this.lab_time.ForeColor = System.Drawing.Color.Silver;
             this.lab_time.Location = new System.Drawing.Point(215, 104);
@@ -126,12 +129,21 @@ namespace Order_Food_View.UserControl.CJControl
             // 
             // imageButton1
             // 
-            this.imageButton1.DataMember = "img";
-            this.imageButton1.DisplayMember = "img";
+            this.imageButton1.DataMember = "Menu_Pecture";
+            this.imageButton1.DisplayMember = "Menu_Pecture";
             this.imageButton1.Location = new System.Drawing.Point(13, 17);
             this.imageButton1.Name = "imageButton1";
             this.imageButton1.Size = new System.Drawing.Size(116, 116);
             this.imageButton1.Press += new System.EventHandler(this.imageButton1_Press);
+            // 
+            // txt_Id
+            // 
+            this.txt_Id.DataMember = "Menu_Id";
+            this.txt_Id.DisplayMember = "Menu_Id";
+            this.txt_Id.Location = new System.Drawing.Point(109, 148);
+            this.txt_Id.Name = "txt_Id";
+            this.txt_Id.Size = new System.Drawing.Size(100, 35);
+            this.txt_Id.Visible = false;
             // 
             // JFMallControl
             // 
@@ -155,5 +167,6 @@ namespace Order_Food_View.UserControl.CJControl
         private Smobiler.Core.Controls.Label label3;
         private Smobiler.Core.Controls.Label lab_time;
         private Smobiler.Core.Controls.ImageButton imageButton1;
+        private Smobiler.Core.Controls.TextBox txt_Id;
     }
 }
