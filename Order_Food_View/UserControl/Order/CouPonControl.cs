@@ -28,9 +28,7 @@ namespace Order_Food_View.UserControl
         }
 
         private void CouPonControl_Load(object sender, EventArgs e)
-        {
-
-             
+        { 
             YesOrderCouPonList();
 
         } 

@@ -36,6 +36,7 @@ namespace Order_Food_View.UserControl
             this.lab_money = new Smobiler.Core.Controls.Label();
             this.label6 = new Smobiler.Core.Controls.Label();
             this.label7 = new Smobiler.Core.Controls.Label();
+            this.label8 = new Smobiler.Core.Controls.Label();
             // 
             // panel1
             // 
@@ -56,7 +57,8 @@ namespace Order_Food_View.UserControl
             this.label5,
             this.lab_money,
             this.label6,
-            this.label7});
+            this.label7,
+            this.label8});
             this.panel1.Name = "panel1";
             this.panel1.RaiseReachEnd = true;
             this.panel1.Size = new System.Drawing.Size(300, 172);
@@ -71,8 +73,8 @@ namespace Order_Food_View.UserControl
             // 
             // lab_OrderNo
             // 
-            this.lab_OrderNo.DataMember = "No";
-            this.lab_OrderNo.DisplayMember = "No";
+            this.lab_OrderNo.DataMember = "Order_No";
+            this.lab_OrderNo.DisplayMember = "Order_No";
             this.lab_OrderNo.Location = new System.Drawing.Point(67, 2);
             this.lab_OrderNo.Name = "lab_OrderNo";
             this.lab_OrderNo.Size = new System.Drawing.Size(100, 26);
@@ -80,8 +82,8 @@ namespace Order_Food_View.UserControl
             // 
             // lab_state
             // 
-            this.lab_state.DataMember = "state";
-            this.lab_state.DisplayMember = "state";
+            this.lab_state.DataMember = "strState";
+            this.lab_state.DisplayMember = "strState";
             this.lab_state.ForeColor = System.Drawing.Color.Gainsboro;
             this.lab_state.HorizontalAlignment = Smobiler.Core.Controls.HorizontalAlignment.Center;
             this.lab_state.Location = new System.Drawing.Point(219, 5);
@@ -91,24 +93,24 @@ namespace Order_Food_View.UserControl
             // 
             // imageButton1
             // 
-            this.imageButton1.DataMember = "eatImg1";
-            this.imageButton1.DisplayMember = "eatImg1";
+            this.imageButton1.DataMember = "Menu_Pecture";
+            this.imageButton1.DisplayMember = "Menu_Pecture";
             this.imageButton1.Location = new System.Drawing.Point(5, 32);
             this.imageButton1.Name = "imageButton1";
             this.imageButton1.Size = new System.Drawing.Size(53, 60);
             // 
             // imageButton2
             // 
-            this.imageButton2.DataMember = "eatImg2";
-            this.imageButton2.DisplayMember = "eatImg2";
+            this.imageButton2.DataMember = "Menu_Pecture";
+            this.imageButton2.DisplayMember = "Menu_Pecture";
             this.imageButton2.Location = new System.Drawing.Point(68, 32);
             this.imageButton2.Name = "imageButton2";
             this.imageButton2.Size = new System.Drawing.Size(53, 60);
             // 
             // lab_Sumnumber
             // 
-            this.lab_Sumnumber.DataMember = "number1";
-            this.lab_Sumnumber.DisplayMember = "number1";
+            this.lab_Sumnumber.DataMember = "Number";
+            this.lab_Sumnumber.DisplayMember = "Number";
             this.lab_Sumnumber.HorizontalAlignment = Smobiler.Core.Controls.HorizontalAlignment.Center;
             this.lab_Sumnumber.Location = new System.Drawing.Point(22, 74);
             this.lab_Sumnumber.Name = "lab_Sumnumber";
@@ -117,8 +119,8 @@ namespace Order_Food_View.UserControl
             // 
             // label2
             // 
-            this.label2.DataMember = "number2";
-            this.label2.DisplayMember = "number2";
+            this.label2.DataMember = "Number";
+            this.label2.DisplayMember = "Number";
             this.label2.HorizontalAlignment = Smobiler.Core.Controls.HorizontalAlignment.Center;
             this.label2.Location = new System.Drawing.Point(87, 74);
             this.label2.Name = "label2";
@@ -145,6 +147,7 @@ namespace Order_Food_View.UserControl
             this.btn_setOrder.Name = "btn_setOrder";
             this.btn_setOrder.Size = new System.Drawing.Size(77, 30);
             this.btn_setOrder.Text = "button2";
+            this.btn_setOrder.Press += new System.EventHandler(this.btn_setOrder_Press);
             // 
             // btn_successOrder
             // 
@@ -156,6 +159,7 @@ namespace Order_Food_View.UserControl
             this.btn_successOrder.Name = "btn_successOrder";
             this.btn_successOrder.Size = new System.Drawing.Size(77, 30);
             this.btn_successOrder.Text = "button1";
+            this.btn_successOrder.Press += new System.EventHandler(this.btn_successOrder_Press);
             // 
             // label3
             // 
@@ -217,6 +221,14 @@ namespace Order_Food_View.UserControl
             this.label7.Size = new System.Drawing.Size(31, 35);
             this.label7.Text = "×";
             // 
+            // label8
+            // 
+            this.label8.Location = new System.Drawing.Point(179, 57);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(100, 17);
+            this.label8.Text = "label8";
+            this.label8.Visible = false;
+            // 
             // OrderShowListControl
             // 
             this.Border = new Smobiler.Core.Controls.Border(0F, 0F, 0F, 10F);
@@ -247,5 +259,6 @@ namespace Order_Food_View.UserControl
         private Smobiler.Core.Controls.Label lab_money;
         private Smobiler.Core.Controls.Label label6;
         private Smobiler.Core.Controls.Label label7;
+        private Smobiler.Core.Controls.Label label8;
     }
 }

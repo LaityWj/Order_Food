@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -7,6 +8,7 @@ namespace Order_Food_Model
 {
 	 public class Base_Shou
 	 {
+		
 		public int Shou_Id { get; set; }
 		public string Address_Detail { get; set; }
 		public string Shou_Tel { get; set; }

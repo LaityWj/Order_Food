@@ -23,8 +23,9 @@ namespace Order_Food_View.UserControl
             this.tabPageView1 = new Smobiler.Core.Controls.TabPageView();
             this.tabPageControl1 = new Smobiler.Core.Controls.TabPageControl();
             this.tabPageControl2 = new Smobiler.Core.Controls.TabPageControl();
-            this.btn_X = new Smobiler.Core.Controls.Button();
             this.listView1 = new Smobiler.Core.Controls.ListView();
+            this.btn_X = new Smobiler.Core.Controls.Button();
+            this.listView2 = new Smobiler.Core.Controls.ListView();
             // 
             // panel5
             // 
@@ -38,6 +39,7 @@ namespace Order_Food_View.UserControl
             // 
             // lan_coupon
             // 
+            this.lan_coupon.BackColor = System.Drawing.Color.White;
             this.lan_coupon.FontSize = 15F;
             this.lan_coupon.HorizontalAlignment = Smobiler.Core.Controls.HorizontalAlignment.Center;
             this.lan_coupon.Location = new System.Drawing.Point(0, 3);
@@ -59,9 +61,12 @@ namespace Order_Food_View.UserControl
             this.tabPageView1.Titles = new string[] {
         "可用优惠券(0)",
         "不可用优惠券(3)"};
+            this.tabPageView1.TitleStyle = new Smobiler.Core.Controls.TabPageViewTitleStyle(System.Drawing.Color.White, System.Drawing.Color.Black, System.Drawing.Color.Blue);
             // 
             // tabPageControl1
             // 
+            this.tabPageControl1.Controls.AddRange(new Smobiler.Core.Controls.MobileControl[] {
+            this.listView2});
             this.tabPageControl1.ItemAlign = Smobiler.Core.Controls.LayoutItemAlign.Center;
             this.tabPageControl1.Name = "tabPageControl1";
             // 
@@ -71,9 +76,16 @@ namespace Order_Food_View.UserControl
             this.listView1});
             this.tabPageControl2.Name = "tabPageControl2";
             // 
+            // listView1
+            // 
+            this.listView1.Location = new System.Drawing.Point(0, 24);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(300, 293);
+            this.listView1.TemplateControlName = "ShowCouPonControl";
+            // 
             // btn_X
             // 
-            this.btn_X.BackColor = System.Drawing.Color.Gainsboro;
+            this.btn_X.BackColor = System.Drawing.Color.White;
             this.btn_X.FontSize = 24F;
             this.btn_X.ForeColor = System.Drawing.Color.Black;
             this.btn_X.Location = new System.Drawing.Point(274, 3);
@@ -82,12 +94,12 @@ namespace Order_Food_View.UserControl
             this.btn_X.Text = "×";
             this.btn_X.Press += new System.EventHandler(this.btn_X_Press);
             // 
-            // listView1
+            // listView2
             // 
-            this.listView1.Location = new System.Drawing.Point(0, 24);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(300, 293);
-            this.listView1.TemplateControlName = "ShowCouPonControl";
+            this.listView2.Location = new System.Drawing.Point(0, 24);
+            this.listView2.Name = "listView2";
+            this.listView2.Size = new System.Drawing.Size(300, 293);
+            this.listView2.TemplateControlName = "ShowCouPonControl";
             // 
             // CouPonControl
             // 
@@ -109,5 +121,6 @@ namespace Order_Food_View.UserControl
         private Smobiler.Core.Controls.TabPageControl tabPageControl2;
         private Smobiler.Core.Controls.Button btn_X;
         private Smobiler.Core.Controls.ListView listView1;
+        private Smobiler.Core.Controls.ListView listView2;
     }
 }

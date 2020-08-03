@@ -58,7 +58,7 @@ namespace Order_Food_View.HelperClass
             //返回空字符串，表示响应错误
             return "";
         }
-
+        
         /// <summary>
         /// 添加
         /// </summary>
@@ -67,6 +67,7 @@ namespace Order_Food_View.HelperClass
         /// <returns></returns>
         public  string Post(string Url,string JsonData)
         {
+            
             HttpClient client = new HttpClient();
             //设置 API的 基地址
             client.BaseAddress = new Uri(BaseAddr);
@@ -112,7 +113,29 @@ namespace Order_Food_View.HelperClass
             //返回空字符串，表示响应错误
             return "";
         }
+        public string del(string Url)
+        {
+            HttpClient client = new HttpClient();
+            //设置 API的 基地址
+            client.BaseAddress = new Uri(BaseAddr);
+            //设置 默认请求头ACCEPT
+            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
+            //设置消息体
+            HttpContent content = new StringContent("");
+            content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+
+            //发送Post请求
+            HttpResponseMessage msg = client.PostAsync(Url, content).Result;
+            //判断结果是否成功
+            if (msg.IsSuccessStatusCode)
+            {
+                //返回响应结果
+                return msg.Content.ReadAsStringAsync().Result;
+            }
+            //返回空字符串，表示响应错误
+            return "";
+        }
 
     }
 }

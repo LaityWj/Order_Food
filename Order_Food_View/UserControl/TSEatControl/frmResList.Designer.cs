@@ -31,6 +31,7 @@ namespace Order_Food_View.Layout
             this.btndes = new Smobiler.Core.Controls.Button();
             this.textBox1 = new Smobiler.Core.Controls.TextBox();
             this.btnplus = new Smobiler.Core.Controls.Button();
+            this.label1 = new Smobiler.Core.Controls.Label();
             // 
             // swipeView1
             // 
@@ -38,7 +39,7 @@ namespace Order_Food_View.Layout
             this.swipeView1.Controls.AddRange(new Smobiler.Core.Controls.MobileControl[] {
             this.panel1});
             this.swipeView1.Name = "swipeView1";
-            this.swipeView1.Size = new System.Drawing.Size(300, 100);
+            this.swipeView1.Size = new System.Drawing.Size(215, 100);
             // 
             // panel1
             // 
@@ -53,34 +54,34 @@ namespace Order_Food_View.Layout
             this.label5,
             this.btndes,
             this.textBox1,
-            this.btnplus});
+            this.btnplus,
+            this.label1});
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(300, 100);
+            this.panel1.Size = new System.Drawing.Size(215, 100);
+            this.panel1.Press += new System.EventHandler(this.panel1_Press);
             // 
             // image1
             // 
             this.image1.DataMember = "Menu_Pecture";
             this.image1.DisplayMember = "Menu_Pecture";
-            this.image1.Location = new System.Drawing.Point(3, 2);
             this.image1.Name = "image1";
-            this.image1.Size = new System.Drawing.Size(96, 94);
+            this.image1.Size = new System.Drawing.Size(96, 100);
             // 
             // labname
             // 
             this.labname.DataMember = "Menu_Name";
             this.labname.DisplayMember = "Menu_Name";
-            this.labname.FontSize = 18F;
-            this.labname.Location = new System.Drawing.Point(111, 6);
+            this.labname.FontSize = 16F;
+            this.labname.Location = new System.Drawing.Point(96, 0);
             this.labname.Name = "labname";
-            this.labname.Size = new System.Drawing.Size(100, 35);
-            this.labname.Text = "小炒菜";
+            this.labname.Size = new System.Drawing.Size(100, 20);
             // 
             // label2
             // 
             this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(112, 41);
+            this.label2.Location = new System.Drawing.Point(96, 20);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(69, 35);
+            this.label2.Size = new System.Drawing.Size(69, 25);
             this.label2.Text = "￥";
             // 
             // labMoney
@@ -88,43 +89,41 @@ namespace Order_Food_View.Layout
             this.labMoney.DataMember = "Menu_Price";
             this.labMoney.DisplayMember = "Menu_Price";
             this.labMoney.ForeColor = System.Drawing.Color.Red;
-            this.labMoney.Location = new System.Drawing.Point(128, 41);
+            this.labMoney.Location = new System.Drawing.Point(112, 20);
             this.labMoney.Name = "labMoney";
-            this.labMoney.Size = new System.Drawing.Size(100, 35);
+            this.labMoney.Size = new System.Drawing.Size(100, 25);
             this.labMoney.Text = "15";
             // 
             // label4
             // 
             this.label4.ForeColor = System.Drawing.Color.Red;
-            this.label4.Location = new System.Drawing.Point(144, 41);
+            this.label4.Location = new System.Drawing.Point(131, 20);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(100, 35);
+            this.label4.Size = new System.Drawing.Size(94, 25);
             this.label4.Text = "/份";
             // 
             // label3
             // 
             this.label3.ForeColor = System.Drawing.Color.DimGray;
-            this.label3.Location = new System.Drawing.Point(111, 66);
+            this.label3.Location = new System.Drawing.Point(96, 45);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(100, 35);
+            this.label3.Size = new System.Drawing.Size(46, 25);
             this.label3.Text = "月销：";
             // 
             // labNumber
             // 
-            this.labNumber.DataMember = "number";
-            this.labNumber.DisplayMember = "number";
             this.labNumber.ForeColor = System.Drawing.Color.DimGray;
-            this.labNumber.Location = new System.Drawing.Point(146, 65);
+            this.labNumber.Location = new System.Drawing.Point(131, 44);
             this.labNumber.Name = "labNumber";
-            this.labNumber.Size = new System.Drawing.Size(100, 35);
+            this.labNumber.Size = new System.Drawing.Size(65, 25);
             this.labNumber.Text = "400";
             // 
             // label5
             // 
             this.label5.ForeColor = System.Drawing.Color.DimGray;
-            this.label5.Location = new System.Drawing.Point(171, 65);
+            this.label5.Location = new System.Drawing.Point(156, 44);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(100, 35);
+            this.label5.Size = new System.Drawing.Size(40, 25);
             this.label5.Text = "份";
             // 
             // btndes
@@ -132,7 +131,7 @@ namespace Order_Food_View.Layout
             this.btndes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btndes.BorderRadius = 2;
             this.btndes.ForeColor = System.Drawing.Color.Black;
-            this.btndes.Location = new System.Drawing.Point(216, 73);
+            this.btndes.Location = new System.Drawing.Point(150, 80);
             this.btndes.Name = "btndes";
             this.btndes.Size = new System.Drawing.Size(16, 18);
             this.btndes.Text = "-";
@@ -140,9 +139,10 @@ namespace Order_Food_View.Layout
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(236, 73);
+            this.textBox1.HorizontalAlignment = Smobiler.Core.Controls.HorizontalAlignment.Center;
+            this.textBox1.Location = new System.Drawing.Point(170, 80);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(25, 18);
+            this.textBox1.Size = new System.Drawing.Size(20, 18);
             this.textBox1.Text = "1";
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -151,17 +151,24 @@ namespace Order_Food_View.Layout
             this.btnplus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnplus.BorderRadius = 2;
             this.btnplus.ForeColor = System.Drawing.Color.Black;
-            this.btnplus.Location = new System.Drawing.Point(266, 73);
+            this.btnplus.Location = new System.Drawing.Point(193, 80);
             this.btnplus.Name = "btnplus";
             this.btnplus.Size = new System.Drawing.Size(16, 18);
             this.btnplus.Text = "+";
             this.btnplus.Press += new System.EventHandler(this.button2_Press);
             // 
+            // label1
+            // 
+            this.label1.Location = new System.Drawing.Point(156, 8);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(100, 12);
+            this.label1.Text = "label1";
+            // 
             // frmResList
             // 
             this.Controls.AddRange(new Smobiler.Core.Controls.MobileControl[] {
             this.swipeView1});
-            this.Size = new System.Drawing.Size(300, 100);
+            this.Size = new System.Drawing.Size(215, 100);
             this.Load += new System.EventHandler(this.frmResList_Load);
             this.Name = "frmResList";
 
@@ -181,5 +188,6 @@ namespace Order_Food_View.Layout
         private Smobiler.Core.Controls.Button btndes;
         private Smobiler.Core.Controls.TextBox textBox1;
         private Smobiler.Core.Controls.Button btnplus;
+        private Smobiler.Core.Controls.Label label1;
     }
 }

@@ -118,6 +118,7 @@
     <Compile Include="frmSetting.Designer.cs">
       <DependentUpon>frmSetting.cs</DependentUpon>
     </Compile>
+    <Compile Include="HelperClass\GetListToDataTable.cs" />
     <Compile Include="HelperClass\Helper.cs" />
     <Compile Include="HelperClass\HttpClientHelper.cs" />
     <Compile Include="MobileGlobal.cs" />
@@ -145,10 +146,22 @@
     <Compile Include="Page\JFPage\JFMallForm.Designer.cs">
       <DependentUpon>JFMallForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Page\LoginPage\UserLoginPage.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Page\LoginPage\UserLoginPage.Designer.cs">
+      <DependentUpon>UserLoginPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Page\LoginPage\UserRegisterPage.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Page\LoginPage\UserRegisterPage.designer.cs">
+      <DependentUpon>UserRegisterPage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Page\OrderPage\OrderForm.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Page\OrderPage\OrderForm.Designer.cs">
+    <Compile Include="Page\OrderPage\OrderForm.designer.cs">
       <DependentUpon>OrderForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Page\OrderPage\OrderListForm.cs">
@@ -160,7 +173,7 @@
     <Compile Include="Page\OrderPage\SuccessOrder.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Page\OrderPage\SuccessOrder.Designer.cs">
+    <Compile Include="Page\OrderPage\SuccessOrder.designer.cs">
       <DependentUpon>SuccessOrder.cs</DependentUpon>
     </Compile>
     <Compile Include="Page\OutFoodFrom\AddressForm.cs">
@@ -205,11 +218,11 @@
     <Compile Include="Page\SmobilerUpdatePwdForm.Designer.cs">
       <DependentUpon>SmobilerUpdatePwdForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Page\TS_eat\TS_In_FoodForm.cs">
+    <Compile Include="Page\TS_eat\TS_EatFormList.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Page\TS_eat\TS_In_FoodForm.Designer.cs">
-      <DependentUpon>TS_In_FoodForm.cs</DependentUpon>
+    <Compile Include="Page\TS_eat\TS_EatFormList.designer.cs">
+      <DependentUpon>TS_EatFormList.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -278,12 +291,6 @@
     <Compile Include="UserControl\Layout\frmAddress.Designer.cs">
       <DependentUpon>frmAddress.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControl\Layout\frmResList.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="UserControl\Layout\frmResList.Designer.cs">
-      <DependentUpon>frmResList.cs</DependentUpon>
-    </Compile>
     <Compile Include="UserControl\Layout\FrmResType.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -314,24 +321,53 @@
     <Compile Include="UserControl\Order\CouPonControl.Designer.cs">
       <DependentUpon>CouPonControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControl\Order\OrderResList.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControl\Order\OrderResList.designer.cs">
+      <DependentUpon>OrderResList.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControl\Order\OrderShowListControl.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="UserControl\Order\OrderShowListControl.Designer.cs">
+    <Compile Include="UserControl\Order\OrderShowListControl.designer.cs">
       <DependentUpon>OrderShowListControl.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControl\Order\OrderUserControl.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="UserControl\Order\OrderUserControl.Designer.cs">
+    <Compile Include="UserControl\Order\OrderUserControl.designer.cs">
       <DependentUpon>OrderUserControl.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControl\Order\ShowCouPonControl.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="UserControl\Order\ShowCouPonControl.Designer.cs">
+    <Compile Include="UserControl\Order\ShowCouPonControl.designer.cs">
       <DependentUpon>ShowCouPonControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControl\TSEatControl\frmResList.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControl\TSEatControl\frmResList.Designer.cs">
+      <DependentUpon>frmResList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\TSEatControl\TSBuyCar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControl\TSEatControl\TSBuyCar.designer.cs">
+      <DependentUpon>TSBuyCar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\TSEatControl\TSBuyCarRes.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControl\TSEatControl\TSBuyCarRes.designer.cs">
+      <DependentUpon>TSBuyCarRes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\Data.cs" />
+    <Compile Include="ViewModel\OrderState.cs" />
+    <Compile Include="ViewModel\OrderViewModel.cs" />
+    <Compile Include="ViewModel\ShowCarModel.cs" />
+    <Compile Include="ViewModel\UserBuyIdModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="frmGenerateQRcode.resx">
@@ -357,6 +393,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Page\JFPage\JFMallForm.resx">
       <DependentUpon>JFMallForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Page\LoginPage\UserLoginPage.resx">
+      <DependentUpon>UserLoginPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Page\LoginPage\UserRegisterPage.resx">
+      <DependentUpon>UserRegisterPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Page\OrderPage\OrderForm.resx">
       <DependentUpon>OrderForm.cs</DependentUpon>
@@ -388,8 +430,8 @@
     <EmbeddedResource Include="Page\SmobilerUpdatePwdForm.resx">
       <DependentUpon>SmobilerUpdatePwdForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Page\TS_eat\TS_In_FoodForm.resx">
-      <DependentUpon>TS_In_FoodForm.cs</DependentUpon>
+    <EmbeddedResource Include="Page\TS_eat\TS_EatFormList.resx">
+      <DependentUpon>TS_EatFormList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -422,9 +464,6 @@
     <EmbeddedResource Include="UserControl\Layout\frmAddress.resx">
       <DependentUpon>frmAddress.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControl\Layout\frmResList.resx">
-      <DependentUpon>frmResList.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UserControl\Layout\FrmResType.resx">
       <DependentUpon>FrmResType.cs</DependentUpon>
     </EmbeddedResource>
@@ -440,6 +479,9 @@
     <EmbeddedResource Include="UserControl\Order\CouPonControl.resx">
       <DependentUpon>CouPonControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\Order\OrderResList.resx">
+      <DependentUpon>OrderResList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControl\Order\OrderShowListControl.resx">
       <DependentUpon>OrderShowListControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -448,6 +490,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl\Order\ShowCouPonControl.resx">
       <DependentUpon>ShowCouPonControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\TSEatControl\frmResList.resx">
+      <DependentUpon>frmResList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\TSEatControl\TSBuyCar.resx">
+      <DependentUpon>TSBuyCar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\TSEatControl\TSBuyCarRes.resx">
+      <DependentUpon>TSBuyCarRes.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -461,7 +512,12 @@
   <ItemGroup>
     <Content Include="Smobiler_128.ico" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Order_Food_Model\Order_Food_Model.csproj">
+      <Project>{2C68F3FC-8996-4AAB-855C-C810B146AEF7}</Project>
+      <Name>Order_Food_Model</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

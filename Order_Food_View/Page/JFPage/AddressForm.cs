@@ -44,7 +44,7 @@ namespace Order_Food_View.Page.JFPage
         public void GetAddress()
         {
             DataTable table = new DataTable();
-            HttpClientHelper httpClient = new HttpClientHelper("http://localhost:50872/Menu/GetAddressFirst");
+            HttpClientHelper httpClient = new HttpClientHelper("http://192.168.43.51:8081/Menu/GetAddressFirst");
             string shouhuo = httpClient.Get("");
             table.Columns.Add("User_Name",typeof(System.String));
             table.Columns.Add("User_Phone", typeof(System.String));

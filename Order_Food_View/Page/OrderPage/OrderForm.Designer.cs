@@ -20,20 +20,25 @@ namespace Order_Food_View.Page
         private void InitializeComponent()
         {
             this.panel1 = new Smobiler.Core.Controls.Panel();
+            this.barcodeScannerButton1 = new Smobiler.Core.Controls.BarcodeScannerButton();
             this.panel2 = new Smobiler.Core.Controls.Panel();
             this.label1 = new Smobiler.Core.Controls.Label();
             this.imageButton1 = new Smobiler.Core.Controls.ImageButton();
             this.panel3 = new Smobiler.Core.Controls.Panel();
             this.image1 = new Smobiler.Core.Controls.Image();
+            this.lab_table = new Smobiler.Core.Controls.Label();
+            this.lab_desk = new Smobiler.Core.Controls.Label();
             this.panel4 = new Smobiler.Core.Controls.Panel();
             this.label3 = new Smobiler.Core.Controls.Label();
             this.panel5 = new Smobiler.Core.Controls.Panel();
             this.label4 = new Smobiler.Core.Controls.Label();
-            this.listView1 = new Smobiler.Core.Controls.ListView();
+            this.order_listview = new Smobiler.Core.Controls.ListView();
             this.label5 = new Smobiler.Core.Controls.Label();
             this.btn_CouPon = new Smobiler.Core.Controls.Button();
             this.panel6 = new Smobiler.Core.Controls.Panel();
+            this.label2 = new Smobiler.Core.Controls.Label();
             this.lab_number = new Smobiler.Core.Controls.Label();
+            this.label11 = new Smobiler.Core.Controls.Label();
             this.lab_num = new Smobiler.Core.Controls.Label();
             this.textBox1 = new Smobiler.Core.Controls.TextBox();
             this.label8 = new Smobiler.Core.Controls.Label();
@@ -46,12 +51,10 @@ namespace Order_Food_View.Page
             this.label7 = new Smobiler.Core.Controls.Label();
             this.panel7 = new Smobiler.Core.Controls.Panel();
             this.lab_money = new Smobiler.Core.Controls.Label();
-            this.label11 = new Smobiler.Core.Controls.Label();
+            this.lab_Lossmoney = new Smobiler.Core.Controls.Label();
             this.btn_Pay = new Smobiler.Core.Controls.Button();
             this.image3 = new Smobiler.Core.Controls.Image();
-            this.barcodeScannerButton1 = new Smobiler.Core.Controls.BarcodeScannerButton();
-            this.lab_table = new Smobiler.Core.Controls.Label();
-            this.lab_desk = new Smobiler.Core.Controls.Label();
+            this.lab_tab = new Smobiler.Core.Controls.Label();
             // 
             // panel1
             // 
@@ -70,9 +73,19 @@ namespace Order_Food_View.Page
             this.label6,
             this.label7,
             this.panel7,
-            this.image3});
+            this.image3,
+            this.lab_tab});
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(300, 580);
+            // 
+            // barcodeScannerButton1
+            // 
+            this.barcodeScannerButton1.Location = new System.Drawing.Point(317, 12);
+            this.barcodeScannerButton1.Name = "barcodeScannerButton1";
+            this.barcodeScannerButton1.ResourceID = "BarcodeScanner";
+            this.barcodeScannerButton1.Size = new System.Drawing.Size(35, 35);
+            this.barcodeScannerButton1.BarcodeScanned += new Smobiler.Core.Controls.BarcodeScannerCallBackHandler(this.barcodeScannerButton1_BarcodeScanned);
+            this.barcodeScannerButton1.Press += new System.EventHandler(this.barcodeScannerButton1_Press);
             // 
             // panel2
             // 
@@ -119,6 +132,23 @@ namespace Order_Food_View.Page
             this.image1.ResourceID = "table";
             this.image1.Size = new System.Drawing.Size(35, 35);
             // 
+            // lab_table
+            // 
+            this.lab_table.Bold = true;
+            this.lab_table.FontSize = 20F;
+            this.lab_table.HorizontalAlignment = Smobiler.Core.Controls.HorizontalAlignment.Right;
+            this.lab_table.Location = new System.Drawing.Point(53, 13);
+            this.lab_table.Name = "lab_table";
+            this.lab_table.Size = new System.Drawing.Size(40, 35);
+            // 
+            // lab_desk
+            // 
+            this.lab_desk.Bold = true;
+            this.lab_desk.FontSize = 20F;
+            this.lab_desk.Location = new System.Drawing.Point(93, 13);
+            this.lab_desk.Name = "lab_desk";
+            this.lab_desk.Size = new System.Drawing.Size(38, 35);
+            // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.White;
@@ -143,7 +173,7 @@ namespace Order_Food_View.Page
             this.panel5.BackColor = System.Drawing.Color.White;
             this.panel5.Controls.AddRange(new Smobiler.Core.Controls.MobileControl[] {
             this.label4,
-            this.listView1,
+            this.order_listview,
             this.label5,
             this.btn_CouPon,
             this.panel6,
@@ -160,12 +190,13 @@ namespace Order_Food_View.Page
             this.label4.Size = new System.Drawing.Size(106, 24);
             this.label4.Text = "订单详情";
             // 
-            // listView1
+            // order_listview
             // 
-            this.listView1.Location = new System.Drawing.Point(13, 41);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(286, 160);
-            this.listView1.TemplateControlName = "OrderUserControl";
+            this.order_listview.Location = new System.Drawing.Point(13, 41);
+            this.order_listview.Name = "order_listview";
+            this.order_listview.Size = new System.Drawing.Size(286, 160);
+            this.order_listview.TemplateControlName = "OrderUserControl";
+            this.order_listview.RowBind += new Smobiler.Core.Controls.ListViewTemplateBindEventHandler(this.listView1_RowBind);
             // 
             // label5
             // 
@@ -191,25 +222,41 @@ namespace Order_Food_View.Page
             // panel6
             // 
             this.panel6.Controls.AddRange(new Smobiler.Core.Controls.MobileControl[] {
+            this.label2,
             this.lab_number,
+            this.label11,
             this.lab_num});
-            this.panel6.Location = new System.Drawing.Point(86, 260);
+            this.panel6.Location = new System.Drawing.Point(0, 260);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(213, 25);
+            this.panel6.Size = new System.Drawing.Size(299, 25);
+            // 
+            // label2
+            // 
+            this.label2.Location = new System.Drawing.Point(119, 4);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(22, 19);
+            this.label2.Text = "共";
             // 
             // lab_number
             // 
             this.lab_number.HorizontalAlignment = Smobiler.Core.Controls.HorizontalAlignment.Right;
-            this.lab_number.Location = new System.Drawing.Point(65, 4);
+            this.lab_number.Location = new System.Drawing.Point(141, 4);
             this.lab_number.Name = "lab_number";
-            this.lab_number.Size = new System.Drawing.Size(75, 18);
+            this.lab_number.Size = new System.Drawing.Size(27, 19);
             this.lab_number.Text = "label7";
+            // 
+            // label11
+            // 
+            this.label11.Location = new System.Drawing.Point(167, 4);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(76, 19);
+            this.label11.Text = "件,小计￥";
             // 
             // lab_num
             // 
-            this.lab_num.Location = new System.Drawing.Point(140, 4);
+            this.lab_num.Location = new System.Drawing.Point(228, 4);
             this.lab_num.Name = "lab_num";
-            this.lab_num.Size = new System.Drawing.Size(64, 18);
+            this.lab_num.Size = new System.Drawing.Size(64, 19);
             this.lab_num.Text = "label7";
             // 
             // textBox1
@@ -231,7 +278,7 @@ namespace Order_Food_View.Page
             // 
             // wx
             // 
-            this.wx.Location = new System.Drawing.Point(266, 447);
+            this.wx.Location = new System.Drawing.Point(266, 453);
             this.wx.Name = "wx";
             this.wx.Size = new System.Drawing.Size(15, 15);
             this.wx.Style = Smobiler.Core.Controls.CheckBoxStyle.Circular;
@@ -255,7 +302,7 @@ namespace Order_Food_View.Page
             // label9
             // 
             this.label9.FontSize = 15F;
-            this.label9.Location = new System.Drawing.Point(34, 446);
+            this.label9.Location = new System.Drawing.Point(33, 445);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(100, 22);
             this.label9.Text = "微信支付";
@@ -265,8 +312,8 @@ namespace Order_Food_View.Page
             this.label10.FontSize = 15F;
             this.label10.Location = new System.Drawing.Point(33, 474);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(222, 22);
-            this.label10.Text = "会员钱包支付（余额：100）";
+            this.label10.Size = new System.Drawing.Size(108, 22);
+            this.label10.Text = "会员钱包支付";
             // 
             // label6
             // 
@@ -288,7 +335,7 @@ namespace Order_Food_View.Page
             this.panel7.BackColor = System.Drawing.Color.White;
             this.panel7.Controls.AddRange(new Smobiler.Core.Controls.MobileControl[] {
             this.lab_money,
-            this.label11,
+            this.lab_Lossmoney,
             this.btn_Pay});
             this.panel7.Location = new System.Drawing.Point(0, 520);
             this.panel7.Name = "panel7";
@@ -302,14 +349,14 @@ namespace Order_Food_View.Page
             this.lab_money.Size = new System.Drawing.Size(67, 73);
             this.lab_money.Text = "应付:";
             // 
-            // label11
+            // lab_Lossmoney
             // 
-            this.label11.FontSize = 16F;
-            this.label11.ForeColor = System.Drawing.Color.Red;
-            this.label11.Location = new System.Drawing.Point(68, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(62, 72);
-            this.label11.Text = "￥150";
+            this.lab_Lossmoney.FontSize = 16F;
+            this.lab_Lossmoney.ForeColor = System.Drawing.Color.Red;
+            this.lab_Lossmoney.Location = new System.Drawing.Point(68, 0);
+            this.lab_Lossmoney.Name = "lab_Lossmoney";
+            this.lab_Lossmoney.Size = new System.Drawing.Size(62, 72);
+            this.lab_Lossmoney.Text = "￥150";
             // 
             // btn_Pay
             // 
@@ -328,31 +375,12 @@ namespace Order_Food_View.Page
             this.image3.ResourceID = "qb";
             this.image3.Size = new System.Drawing.Size(22, 22);
             // 
-            // barcodeScannerButton1
+            // lab_tab
             // 
-            this.barcodeScannerButton1.Location = new System.Drawing.Point(317, 12);
-            this.barcodeScannerButton1.Name = "barcodeScannerButton1";
-            this.barcodeScannerButton1.ResourceID = "BarcodeScanner";
-            this.barcodeScannerButton1.Size = new System.Drawing.Size(35, 35);
-            this.barcodeScannerButton1.BarcodeScanned += new Smobiler.Core.Controls.BarcodeScannerCallBackHandler(this.barcodeScannerButton1_BarcodeScanned);
-            this.barcodeScannerButton1.Press += new System.EventHandler(this.barcodeScannerButton1_Press);
-            // 
-            // lab_table
-            // 
-            this.lab_table.Bold = true;
-            this.lab_table.FontSize = 20F;
-            this.lab_table.HorizontalAlignment = Smobiler.Core.Controls.HorizontalAlignment.Right;
-            this.lab_table.Location = new System.Drawing.Point(53, 13);
-            this.lab_table.Name = "lab_table";
-            this.lab_table.Size = new System.Drawing.Size(40, 35);
-            // 
-            // lab_desk
-            // 
-            this.lab_desk.Bold = true;
-            this.lab_desk.FontSize = 20F;
-            this.lab_desk.Location = new System.Drawing.Point(93, 13);
-            this.lab_desk.Name = "lab_desk";
-            this.lab_desk.Size = new System.Drawing.Size(38, 35);
+            this.lab_tab.Location = new System.Drawing.Point(141, 474);
+            this.lab_tab.Name = "lab_tab";
+            this.lab_tab.Size = new System.Drawing.Size(75, 22);
+            this.lab_tab.Text = "label12";
             // 
             // OrderForm
             // 
@@ -374,12 +402,10 @@ namespace Order_Food_View.Page
         private Smobiler.Core.Controls.Label label3;
         private Smobiler.Core.Controls.Panel panel5;
         private Smobiler.Core.Controls.Label label4;
-        private Smobiler.Core.Controls.ListView listView1;
+        private Smobiler.Core.Controls.ListView order_listview;
         private Smobiler.Core.Controls.Label label5;
         private Smobiler.Core.Controls.Button btn_CouPon;
         private Smobiler.Core.Controls.Panel panel6;
-        private Smobiler.Core.Controls.Label lab_number;
-        private Smobiler.Core.Controls.Label lab_num;
         private Smobiler.Core.Controls.TextBox textBox1;
         private Smobiler.Core.Controls.Label label8;
         private Smobiler.Core.Controls.CheckBox wx;
@@ -391,12 +417,17 @@ namespace Order_Food_View.Page
         private Smobiler.Core.Controls.Label label7;
         private Smobiler.Core.Controls.Panel panel7;
         private Smobiler.Core.Controls.Label lab_money;
-        private Smobiler.Core.Controls.Label label11;
+        private Smobiler.Core.Controls.Label lab_Lossmoney;
         private Smobiler.Core.Controls.Button btn_Pay;
         private Smobiler.Core.Controls.Image image3;
         private Smobiler.Core.Controls.ImageButton imageButton1;
         private Smobiler.Core.Controls.BarcodeScannerButton barcodeScannerButton1;
         private Smobiler.Core.Controls.Label lab_table;
         private Smobiler.Core.Controls.Label lab_desk;
+        private Smobiler.Core.Controls.Label label2;
+        private Smobiler.Core.Controls.Label lab_number;
+        private Smobiler.Core.Controls.Label label11;
+        private Smobiler.Core.Controls.Label lab_num;
+        private Smobiler.Core.Controls.Label lab_tab;
     }
 }

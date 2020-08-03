@@ -20,16 +20,18 @@ namespace Order_Food_View.UserControl
         {
             this.lab_CName = new Smobiler.Core.Controls.Label();
             this.lab_Price = new Smobiler.Core.Controls.Label();
-            this.lab_Number = new Smobiler.Core.Controls.Label();
             this.panel4 = new Smobiler.Core.Controls.Panel();
             this.image1 = new Smobiler.Core.Controls.Image();
             this.line1 = new Smobiler.Core.Controls.Line();
+            this.label1 = new Smobiler.Core.Controls.Label();
+            this.label2 = new Smobiler.Core.Controls.Label();
+            this.label3 = new Smobiler.Core.Controls.Label();
             // 
             // lab_CName
             // 
             this.lab_CName.Bold = true;
-            this.lab_CName.DataMember = "conPonName";
-            this.lab_CName.DisplayMember = "conPonName";
+            this.lab_CName.DataMember = "MenuName";
+            this.lab_CName.DisplayMember = "MenuName";
             this.lab_CName.FontSize = 14F;
             this.lab_CName.Location = new System.Drawing.Point(4, 6);
             this.lab_CName.Name = "lab_CName";
@@ -38,37 +40,29 @@ namespace Order_Food_View.UserControl
             // lab_Price
             // 
             this.lab_Price.Bold = true;
-            this.lab_Price.DataMember = "price";
-            this.lab_Price.DisplayMember = "price";
+            this.lab_Price.DataMember = "Price";
+            this.lab_Price.DisplayMember = "Price";
             this.lab_Price.ForeColor = System.Drawing.Color.Red;
             this.lab_Price.Location = new System.Drawing.Point(4, 22);
             this.lab_Price.Name = "lab_Price";
             this.lab_Price.Size = new System.Drawing.Size(81, 21);
-            this.lab_Price.Text = "￥";
-            // 
-            // lab_Number
-            // 
-            this.lab_Number.DataMember = "number";
-            this.lab_Number.DisplayMember = "number";
-            this.lab_Number.Location = new System.Drawing.Point(4, 45);
-            this.lab_Number.Name = "lab_Number";
-            this.lab_Number.Size = new System.Drawing.Size(113, 19);
-            this.lab_Number.Text = "月销:";
             // 
             // panel4
             // 
             this.panel4.Controls.AddRange(new Smobiler.Core.Controls.MobileControl[] {
             this.lab_CName,
             this.lab_Price,
-            this.lab_Number});
+            this.label1,
+            this.label2,
+            this.label3});
             this.panel4.Location = new System.Drawing.Point(82, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(168, 80);
+            this.panel4.Size = new System.Drawing.Size(218, 80);
             // 
             // image1
             // 
-            this.image1.DataMember = "Pricture";
-            this.image1.DisplayMember = "Pricture";
+            this.image1.DataMember = "Image";
+            this.image1.DisplayMember = "Image";
             this.image1.Name = "image1";
             this.image1.Size = new System.Drawing.Size(82, 80);
             // 
@@ -78,6 +72,30 @@ namespace Order_Food_View.UserControl
             this.line1.Location = new System.Drawing.Point(1, 80);
             this.line1.Name = "line1";
             this.line1.Size = new System.Drawing.Size(348, 1);
+            // 
+            // label1
+            // 
+            this.label1.HorizontalAlignment = Smobiler.Core.Controls.HorizontalAlignment.Right;
+            this.label1.Location = new System.Drawing.Point(103, 6);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(25, 18);
+            this.label1.Text = "x";
+            // 
+            // label2
+            // 
+            this.label2.DataMember = "Number";
+            this.label2.DisplayMember = "Number";
+            this.label2.Location = new System.Drawing.Point(129, 6);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(37, 18);
+            this.label2.Text = "label2";
+            // 
+            // label3
+            // 
+            this.label3.Location = new System.Drawing.Point(4, 53);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(100, 21);
+            this.label3.Text = "少盐，少油";
             // 
             // OrderUserControl
             // 
@@ -92,9 +110,11 @@ namespace Order_Food_View.UserControl
         #endregion
         private Smobiler.Core.Controls.Label lab_CName;
         private Smobiler.Core.Controls.Label lab_Price;
-        private Smobiler.Core.Controls.Label lab_Number;
         private Smobiler.Core.Controls.Panel panel4;
         private Smobiler.Core.Controls.Image image1;
         private Smobiler.Core.Controls.Line line1;
+        private Smobiler.Core.Controls.Label label1;
+        private Smobiler.Core.Controls.Label label2;
+        private Smobiler.Core.Controls.Label label3;
     }
 }

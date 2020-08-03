@@ -31,6 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -56,12 +59,18 @@
     <Compile Include="Base_OrderType.cs" />
     <Compile Include="Base_Order_Detail.cs" />
     <Compile Include="Base_Pay_Type.cs" />
+    <Compile Include="Base_Qu.cs" />
+    <Compile Include="Base_Sheng.cs" />
+    <Compile Include="Base_Shi.cs" />
     <Compile Include="Base_Shou.cs" />
     <Compile Include="Base_Threshold.cs" />
     <Compile Include="Base_UserAddShou.cs" />
     <Compile Include="Base_UserInfo.cs" />
     <Compile Include="Base_User_Menus_Dining.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

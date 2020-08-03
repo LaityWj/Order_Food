@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Linq;
 using System.Text;
+using Order_Food_Model;
 using Order_Food_View.Page;
 using Order_Food_View.Page.JFPage;
 using Order_Food_View.Page.TS_eat;
@@ -14,9 +15,16 @@ namespace Order_Food_View
 {
     partial class SmobilerFirst : Smobiler.Core.Controls.MobileForm
     {
+        private Base_UserInfo _userInfo;
         public SmobilerFirst() : base()
         {
             InitializeComponent();
+        } 
+        public SmobilerFirst(Base_UserInfo userInfo)
+        {
+            InitializeComponent();
+            this._userInfo = userInfo;
+
         }
         /// <summary>
         /// 轮播图实现
@@ -89,8 +97,8 @@ namespace Order_Food_View
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void ShiTang_Press(object sender, EventArgs e)
-        {
-            TS_In_FoodForm tS_In_Food = new TS_In_FoodForm();
+        { 
+            TS_EatFormList tS_In_Food = new TS_EatFormList(_userInfo);
             Show(tS_In_Food);
         }
         /// <summary>
