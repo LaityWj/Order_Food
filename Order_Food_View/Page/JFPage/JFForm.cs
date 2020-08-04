@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Text;
+using Newtonsoft.Json;
+using Order_Food_Model;
+using Order_Food_View.HelperClass;
 using Order_Food_View.UserControl.CJControl;
 using Smobiler.Core;
 using Smobiler.Core.Controls;
@@ -11,6 +14,7 @@ namespace Order_Food_View.Page.JFPage
 {
     partial class JFForm : Smobiler.Core.Controls.MobileForm
     {
+        HttpClientHelper HttpClient = new HttpClientHelper("http://192.168.43.51:8081");
         public JFForm() : base()
         {
             //This call is required by the SmobilerForm.
@@ -33,6 +37,18 @@ namespace Order_Food_View.Page.JFPage
             listView2.TemplateControl = new JFUserControl();
             IntegralIncome();
             IntegralExpenditure();
+            GetUserModel();
+        }
+        /// <summary>
+        /// 获取用户信息
+        /// </summary>
+        public void GetUserModel()
+        {
+            string userList = HttpClient.Get("/Integral/GetUserModel?userId=1");
+            Data model = JsonConvert.DeserializeObject<Data>(userList);
+            string itemJson = JsonConvert.SerializeObject(model.Result);
+            Base_UserInfo userInfos = JsonConvert.DeserializeObject<Base_UserInfo>(itemJson);
+            this.lab_Integral.Text = userInfos.User_JFNumber.ToString();
         }
         /// <summary>
         /// 根据积分收入显示

@@ -26,12 +26,13 @@ namespace Order_Food_View.Page.JFPage
             this.label2 = new Smobiler.Core.Controls.Label();
             this.label4 = new Smobiler.Core.Controls.Label();
             this.label5 = new Smobiler.Core.Controls.Label();
-            this.label1 = new Smobiler.Core.Controls.Label();
-            this.button1 = new Smobiler.Core.Controls.Button();
             this.lab_name = new Smobiler.Core.Controls.Label();
             this.lab_jf = new Smobiler.Core.Controls.Label();
             this.lab_num = new Smobiler.Core.Controls.Label();
             this.lab_time = new Smobiler.Core.Controls.Label();
+            this.label1 = new Smobiler.Core.Controls.Label();
+            this.button1 = new Smobiler.Core.Controls.Button();
+            this.Menu_Id = new Smobiler.Core.Controls.TextBox();
             // 
             // back_jfdetail
             // 
@@ -99,24 +100,6 @@ namespace Order_Food_View.Page.JFPage
             this.label5.Size = new System.Drawing.Size(88, 19);
             this.label5.Text = "兑换日期：";
             // 
-            // label1
-            // 
-            this.label1.FontSize = 16F;
-            this.label1.Location = new System.Drawing.Point(79, 428);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(253, 148);
-            this.label1.Text = "使用须知\r\n\r\n1、产品以餐厅食物为准\r\n\r\n2、兑换成功后，扣除的积分不予退还\r\n\r\n3、每个用户只能兑换一次";
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Red;
-            this.button1.BorderRadius = 0;
-            this.button1.FontSize = 20F;
-            this.button1.Location = new System.Drawing.Point(66, 600);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(269, 36);
-            this.button1.Text = "立即兑换";
-            // 
             // lab_name
             // 
             this.lab_name.DataMember = "Name";
@@ -159,6 +142,31 @@ namespace Order_Food_View.Page.JFPage
             this.lab_time.Size = new System.Drawing.Size(185, 19);
             this.lab_time.Text = "2020-07-21~2020-10-21";
             // 
+            // label1
+            // 
+            this.label1.FontSize = 16F;
+            this.label1.Location = new System.Drawing.Point(79, 428);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(253, 148);
+            this.label1.Text = "使用须知\r\n\r\n1、产品以餐厅食物为准\r\n\r\n2、兑换成功后，扣除的积分不予退还\r\n\r\n3、每个用户只能兑换一次";
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Red;
+            this.button1.BorderRadius = 0;
+            this.button1.FontSize = 20F;
+            this.button1.Location = new System.Drawing.Point(66, 600);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(269, 36);
+            this.button1.Text = "立即兑换";
+            this.button1.Press += new System.EventHandler(this.button1_Press);
+            // 
+            // Menu_Id
+            // 
+            this.Menu_Id.Location = new System.Drawing.Point(237, 12);
+            this.Menu_Id.Name = "Menu_Id";
+            this.Menu_Id.Size = new System.Drawing.Size(100, 20);
+            // 
             // JFDetailForm
             // 
             this.BackColor = System.Drawing.Color.White;
@@ -167,7 +175,8 @@ namespace Order_Food_View.Page.JFPage
             this.label3,
             this.panel1,
             this.label1,
-            this.button1});
+            this.button1,
+            this.Menu_Id});
             this.Size = new System.Drawing.Size(400, 800);
             this.Load += new System.EventHandler(this.JFDetailForm_Load);
             this.Name = "JFDetailForm";
@@ -188,5 +197,6 @@ namespace Order_Food_View.Page.JFPage
         private Smobiler.Core.Controls.Label lab_jf;
         private Smobiler.Core.Controls.Label lab_num;
         private Smobiler.Core.Controls.Label lab_time;
+        private Smobiler.Core.Controls.TextBox Menu_Id;
     }
 }

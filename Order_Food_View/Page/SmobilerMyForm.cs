@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Newtonsoft.Json;
+using Order_Food_Model;
+using Order_Food_View.HelperClass;
 using Order_Food_View.Page.JFPage;
 using Smobiler.Core;
 using Smobiler.Core.Controls;
@@ -10,6 +13,7 @@ namespace Order_Food_View.Page
 {
     partial class SmobilerMyForm : Smobiler.Core.Controls.MobileForm
     {
+        HttpClientHelper HttpClient = new HttpClientHelper("http://192.168.43.51:8081");
         public SmobilerMyForm() : base()
         {
             //This call is required by the SmobilerForm.
@@ -75,14 +79,30 @@ namespace Order_Food_View.Page
             Show(integral);
         }
         /// <summary>
-        /// 跳转到地址页面
+        /// 页面加载事件
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void imgbtn_address_Press(object sender, EventArgs e)
+        private void SmobilerMyForm_Load(object sender, EventArgs e)
         {
-            AddressForm address = new AddressForm();
-            Show(address);
+            //调用用户信息
+            GetUserModel();
+        }
+        /// <summary>
+        /// 显示查询用户信息
+        /// </summary>
+        public void GetUserModel()
+        {
+            string userList = HttpClient.Get("/Integral/GetUserModel?userId=1");
+            Data model = JsonConvert.DeserializeObject<Data>(userList);
+            string itemJson = JsonConvert.SerializeObject(model.Result);
+            Base_UserInfo userInfos = JsonConvert.DeserializeObject<Base_UserInfo>(itemJson);
+            this.user_Name.Text = userInfos.User_Name;
+            this.user_Picture.ResourceID = userInfos.User_Picture;
+            string phone = userInfos.User_Phone.Replace(userInfos.User_Phone.Substring(3, 4), "****");
+            this.user_Phone.Text = phone;
+            this.imageButton2.Text = "￥" + userInfos.User_Money + "          钱包·充值";
+            this.btn_JiFen.Text = userInfos.User_JFNumber.ToString() + "         积分";
         }
     }
 }

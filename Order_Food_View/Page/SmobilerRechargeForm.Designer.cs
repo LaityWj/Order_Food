@@ -22,7 +22,7 @@ namespace Order_Food_View.Page
             this.panel1 = new Smobiler.Core.Controls.Panel();
             this.YuE = new Smobiler.Core.Controls.Label();
             this.label1 = new Smobiler.Core.Controls.Label();
-            this.label2 = new Smobiler.Core.Controls.Label();
+            this.lab_phone = new Smobiler.Core.Controls.Label();
             this.btn_ChongZhi = new Smobiler.Core.Controls.Button();
             this.back_my = new Smobiler.Core.Controls.ImageButton();
             this.label3 = new Smobiler.Core.Controls.Label();
@@ -32,6 +32,7 @@ namespace Order_Food_View.Page
             this.four = new Smobiler.Core.Controls.ImageButton();
             this.five = new Smobiler.Core.Controls.ImageButton();
             this.six = new Smobiler.Core.Controls.ImageButton();
+            this.jine = new Smobiler.Core.Controls.TextBox();
             // 
             // panel1
             // 
@@ -39,7 +40,7 @@ namespace Order_Food_View.Page
             this.panel1.Controls.AddRange(new Smobiler.Core.Controls.MobileControl[] {
             this.YuE,
             this.label1,
-            this.label2});
+            this.lab_phone});
             this.panel1.Location = new System.Drawing.Point(0, 37);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(300, 169);
@@ -49,9 +50,10 @@ namespace Order_Food_View.Page
             this.YuE.Bold = true;
             this.YuE.FontSize = 25F;
             this.YuE.ForeColor = System.Drawing.Color.White;
-            this.YuE.Location = new System.Drawing.Point(113, 50);
+            this.YuE.HorizontalAlignment = Smobiler.Core.Controls.HorizontalAlignment.Center;
+            this.YuE.Location = new System.Drawing.Point(81, 51);
             this.YuE.Name = "YuE";
-            this.YuE.Size = new System.Drawing.Size(100, 35);
+            this.YuE.Size = new System.Drawing.Size(146, 35);
             this.YuE.Text = "￥168";
             // 
             // label1
@@ -63,18 +65,19 @@ namespace Order_Food_View.Page
             this.label1.Size = new System.Drawing.Size(75, 35);
             this.label1.Text = "当前账户:";
             // 
-            // label2
+            // lab_phone
             // 
-            this.label2.FontSize = 15F;
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(143, 97);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(100, 35);
-            this.label2.Text = "159****4167";
+            this.lab_phone.FontSize = 15F;
+            this.lab_phone.ForeColor = System.Drawing.Color.White;
+            this.lab_phone.Location = new System.Drawing.Point(143, 97);
+            this.lab_phone.Name = "lab_phone";
+            this.lab_phone.Size = new System.Drawing.Size(100, 35);
+            this.lab_phone.Text = "159****4167";
             // 
             // btn_ChongZhi
             // 
             this.btn_ChongZhi.BackColor = System.Drawing.Color.Red;
+            this.btn_ChongZhi.BorderRadius = 3;
             this.btn_ChongZhi.FontSize = 20F;
             this.btn_ChongZhi.Location = new System.Drawing.Point(52, 368);
             this.btn_ChongZhi.Name = "btn_ChongZhi";
@@ -167,6 +170,13 @@ namespace Order_Food_View.Page
             this.six.Text = "1000";
             this.six.Press += new System.EventHandler(this.six_Press);
             // 
+            // jine
+            // 
+            this.jine.Location = new System.Drawing.Point(102, 434);
+            this.jine.Name = "jine";
+            this.jine.Size = new System.Drawing.Size(100, 35);
+            this.jine.Visible = false;
+            // 
             // SmobilerRechargeForm
             // 
             this.BackColor = System.Drawing.Color.White;
@@ -180,7 +190,9 @@ namespace Order_Food_View.Page
             this.three,
             this.four,
             this.five,
-            this.six});
+            this.six,
+            this.jine});
+            this.Load += new System.EventHandler(this.SmobilerRechargeForm_Load);
             this.Name = "SmobilerRechargeForm";
 
         }
@@ -189,7 +201,7 @@ namespace Order_Food_View.Page
         private Smobiler.Core.Controls.Panel panel1;
         private Smobiler.Core.Controls.Label YuE;
         private Smobiler.Core.Controls.Label label1;
-        private Smobiler.Core.Controls.Label label2;
+        private Smobiler.Core.Controls.Label lab_phone;
         private Smobiler.Core.Controls.Button btn_ChongZhi;
         private Smobiler.Core.Controls.ImageButton back_my;
         private Smobiler.Core.Controls.Label label3;
@@ -199,5 +211,6 @@ namespace Order_Food_View.Page
         private Smobiler.Core.Controls.ImageButton four;
         private Smobiler.Core.Controls.ImageButton five;
         private Smobiler.Core.Controls.ImageButton six;
+        private Smobiler.Core.Controls.TextBox jine;
     }
 }

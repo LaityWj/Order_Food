@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Newtonsoft.Json;
+using Order_Food_Model;
+using Order_Food_View.HelperClass;
+using Order_Food_View.Models;
 using Smobiler.Core;
 using Smobiler.Core.Controls;
 
@@ -9,6 +13,8 @@ namespace Order_Food_View.Page
 {
     partial class SmobilerRechargeForm : Smobiler.Core.Controls.MobileForm
     {
+        //实例化HttpClientHelper传递IP地址
+        HttpClientHelper httpClient = new HttpClientHelper("http://192.168.43.51:8081");
         public SmobilerRechargeForm() : base()
         {
             //This call is required by the SmobilerForm.
@@ -32,7 +38,17 @@ namespace Order_Food_View.Page
         {
             one.ForeColor = System.Drawing.Color.Red;
             one.BorderColor = System.Drawing.Color.Red;
-            MessageBox.Show(one.Text);
+            this.jine.Text = one.Text;
+            three.ForeColor = System.Drawing.Color.Black;
+            three.BorderColor = System.Drawing.Color.Silver;
+            four.ForeColor = System.Drawing.Color.Black;
+            four.BorderColor = System.Drawing.Color.Silver;
+            five.ForeColor = System.Drawing.Color.Black;
+            five.BorderColor = System.Drawing.Color.Silver;
+            six.ForeColor = System.Drawing.Color.Black;
+            six.BorderColor = System.Drawing.Color.Silver;
+            two.ForeColor = System.Drawing.Color.Black;
+            two.BorderColor = System.Drawing.Color.Silver;
         }
         /// <summary>
         /// 点击200金额
@@ -43,17 +59,45 @@ namespace Order_Food_View.Page
         {
             two.ForeColor = System.Drawing.Color.Red;
             two.BorderColor = System.Drawing.Color.Red;
-            MessageBox.Show(two.Text);
+            this.jine.Text = two.Text;
+            three.ForeColor = System.Drawing.Color.Black;
+            three.BorderColor = System.Drawing.Color.Silver;
+            four.ForeColor = System.Drawing.Color.Black;
+            four.BorderColor = System.Drawing.Color.Silver;
+            five.ForeColor = System.Drawing.Color.Black;
+            five.BorderColor = System.Drawing.Color.Silver;
+            six.ForeColor = System.Drawing.Color.Black;
+            six.BorderColor = System.Drawing.Color.Silver;
+            one.ForeColor = System.Drawing.Color.Black;
+            one.BorderColor = System.Drawing.Color.Silver;
         }
         /// <summary>
-        /// 点击充值跳转到我的页面
+        /// 充值金额
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void btn_ChongZhi_Press(object sender, EventArgs e)
         {
-            SmobilerMyForm my = new SmobilerMyForm();
-            Show(my);
+            Chong chong = new Chong()
+            {
+                money = Convert.ToDecimal(jine.Text),
+                userID = 1
+            };
+            //返回POST
+            string s = httpClient.Post("/Integral/WalletRecarge", JsonConvert.SerializeObject(chong));
+            Data model = JsonConvert.DeserializeObject<Data>(s);
+            int intJson = Convert.ToInt32(JsonConvert.SerializeObject(model.Result));
+            if(intJson > 0)
+            {
+                MessageBox.Show("充值成功");
+                GetUserModel();
+            }
+            else
+            {
+                MessageBox.Show("充值失败");
+            }
+            //SmobilerMyForm my = new SmobilerMyForm();
+            //Show(my);
         }
         /// <summary>
         /// 点击300金额
@@ -64,7 +108,17 @@ namespace Order_Food_View.Page
         {
             three.ForeColor = System.Drawing.Color.Red;
             three.BorderColor = System.Drawing.Color.Red;
-            MessageBox.Show(three.Text);
+            this.jine.Text = three.Text;
+            two.ForeColor = System.Drawing.Color.Black;
+            two.BorderColor = System.Drawing.Color.Silver;
+            four.ForeColor = System.Drawing.Color.Black;
+            four.BorderColor = System.Drawing.Color.Silver;
+            five.ForeColor = System.Drawing.Color.Black;
+            five.BorderColor = System.Drawing.Color.Silver;
+            six.ForeColor = System.Drawing.Color.Black;
+            six.BorderColor = System.Drawing.Color.Silver;
+            one.ForeColor = System.Drawing.Color.Black;
+            one.BorderColor = System.Drawing.Color.Silver;
         }
         /// <summary>
         /// 点击500金额
@@ -75,7 +129,17 @@ namespace Order_Food_View.Page
         {
             four.ForeColor = System.Drawing.Color.Red;
             four.BorderColor = System.Drawing.Color.Red;
-            MessageBox.Show(four.Text);
+            this.jine.Text = four.Text;
+            three.ForeColor = System.Drawing.Color.Black;
+            three.BorderColor = System.Drawing.Color.Silver;
+            two.ForeColor = System.Drawing.Color.Black;
+            two.BorderColor = System.Drawing.Color.Silver;
+            five.ForeColor = System.Drawing.Color.Black;
+            five.BorderColor = System.Drawing.Color.Silver;
+            six.ForeColor = System.Drawing.Color.Black;
+            six.BorderColor = System.Drawing.Color.Silver;
+            one.ForeColor = System.Drawing.Color.Black;
+            one.BorderColor = System.Drawing.Color.Silver;
         }
         /// <summary>
         /// 点击800金额
@@ -86,7 +150,17 @@ namespace Order_Food_View.Page
         {
             five.ForeColor = System.Drawing.Color.Red;
             five.BorderColor = System.Drawing.Color.Red;
-            MessageBox.Show(five.Text);
+            this.jine.Text = five.Text;
+            three.ForeColor = System.Drawing.Color.Black;
+            three.BorderColor = System.Drawing.Color.Silver;
+            four.ForeColor = System.Drawing.Color.Black;
+            four.BorderColor = System.Drawing.Color.Silver;
+            two.ForeColor = System.Drawing.Color.Black;
+            two.BorderColor = System.Drawing.Color.Silver;
+            six.ForeColor = System.Drawing.Color.Black;
+            six.BorderColor = System.Drawing.Color.Silver;
+            one.ForeColor = System.Drawing.Color.Black;
+            one.BorderColor = System.Drawing.Color.Silver;
         }
         /// <summary>
         /// 点击1000金额
@@ -97,7 +171,40 @@ namespace Order_Food_View.Page
         {
             six.ForeColor = System.Drawing.Color.Red;
             six.BorderColor = System.Drawing.Color.Red;
-            MessageBox.Show(six.Text);
+            this.jine.Text = six.Text;
+            three.ForeColor = System.Drawing.Color.Black;
+            three.BorderColor = System.Drawing.Color.Silver;
+            four.ForeColor = System.Drawing.Color.Black;
+            four.BorderColor = System.Drawing.Color.Silver;
+            five.ForeColor = System.Drawing.Color.Black;
+            five.BorderColor = System.Drawing.Color.Silver;
+            two.ForeColor = System.Drawing.Color.Black;
+            two.BorderColor = System.Drawing.Color.Silver;
+            one.ForeColor = System.Drawing.Color.Black;
+            one.BorderColor = System.Drawing.Color.Silver;
+        }
+        /// <summary>
+        /// 页面加载事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void SmobilerRechargeForm_Load(object sender, EventArgs e)
+        {
+            GetUserModel();
+        }
+        /// <summary>
+        /// 显示查询用户信息
+        /// </summary>
+        public void GetUserModel()
+        {
+            string userList = httpClient.Get("/Integral/GetUserModel?userId=1");
+            Data model = JsonConvert.DeserializeObject<Data>(userList);
+            string itemJson = JsonConvert.SerializeObject(model.Result);
+            Base_UserInfo userInfos = JsonConvert.DeserializeObject<Base_UserInfo>(itemJson);
+            this.YuE.Text = "￥" + (userInfos.User_Money).ToString();
+            string phone = userInfos.User_Phone;
+            phone = phone.Replace(phone.Substring(3, 4), "****");
+            this.lab_phone.Text = phone;
         }
     }
 }
