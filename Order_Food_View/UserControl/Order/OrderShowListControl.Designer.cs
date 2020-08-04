@@ -140,8 +140,8 @@ namespace Order_Food_View.UserControl
             this.btn_setOrder.Border = new Smobiler.Core.Controls.Border(1F);
             this.btn_setOrder.BorderColor = System.Drawing.Color.Red;
             this.btn_setOrder.BorderRadius = 0;
-            this.btn_setOrder.DataMember = "button1";
-            this.btn_setOrder.DisplayMember = "button1";
+            this.btn_setOrder.DataMember = "btn1";
+            this.btn_setOrder.DisplayMember = "btn1";
             this.btn_setOrder.ForeColor = System.Drawing.Color.Black;
             this.btn_setOrder.Location = new System.Drawing.Point(138, 132);
             this.btn_setOrder.Name = "btn_setOrder";
@@ -153,8 +153,8 @@ namespace Order_Food_View.UserControl
             // 
             this.btn_successOrder.BackColor = System.Drawing.Color.Red;
             this.btn_successOrder.BorderRadius = 0;
-            this.btn_successOrder.DataMember = "button2";
-            this.btn_successOrder.DisplayMember = "button2";
+            this.btn_successOrder.DataMember = "btn2";
+            this.btn_successOrder.DisplayMember = "btn2";
             this.btn_successOrder.Location = new System.Drawing.Point(219, 132);
             this.btn_successOrder.Name = "btn_successOrder";
             this.btn_successOrder.Size = new System.Drawing.Size(77, 30);

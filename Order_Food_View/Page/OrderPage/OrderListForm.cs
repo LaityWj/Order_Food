@@ -24,6 +24,11 @@ namespace Order_Food_View.Page
             //This call is required by the SmobilerForm.
             InitializeComponent();
         }
+        //List<OrderViewModel> orders = new List<OrderViewModel>()
+        //{
+        //   new OrderViewModel{  order_Id=1, Order_No="FF202008040858", strState="待付款", Menu_Name="酱香排骨", Menu_Pecture="menu3", Number=1, Menu_Price=25 },
+        //    new OrderViewModel{  order_Id=1, Order_No="FF202008040855", strState="待付款", Food_Name="炒年糕", Menu_Pecture="cy1", Number=1, Menu_Price=25 },
+        //};
         public OrderListForm(Base_UserInfo userInfo)
         {
             this._userInfo = userInfo;
@@ -37,23 +42,47 @@ namespace Order_Food_View.Page
             TsStateOrderList();
             //外卖的订单/2 3 7 8
             WmStateOrderList();
-            state = 3;
-            OrderState state1 = new OrderState()
+            //state = 3;
+            //OrderState state1 = new OrderState()
+            //{
+            //    Order_State = state,
+            //    order_Id = 15
+            //};
+
+            //string json = helper.Post("/Order/GetOrders", JsonConvert.SerializeObject(state1));
+            //Data data = JsonConvert.DeserializeObject<Data>(json);
+            //string orderData = JsonConvert.SerializeObject(data.Result);
+            //List<OrderViewModel> orders = JsonConvert.DeserializeObject<List<OrderViewModel>>(orderData); 
+            DataTable table = new DataTable();
+            table.Columns.Add("Order_No", typeof(System.String));
+            table.Columns.Add("strState", typeof(System.String));
+            table.Columns.Add("Menu_Name", typeof(System.String));
+            table.Columns.Add("Menu_Pecture", typeof(System.String));
+            table.Columns.Add("Number", typeof(System.Int32));
+            table.Columns.Add("Menu_Price", typeof(System.Decimal));
+            table.Columns.Add("sum", typeof(System.Int32));
+            table.Columns.Add("money", typeof(System.Decimal));
+            table.Columns.Add("btn1", typeof(System.String));
+            table.Columns.Add("btn2", typeof(System.String));
+
+            table.Rows.Add("FF202008040858", "待付款", "酱香排骨", "menu3", 1, 25, 2, 50, "取消订单", "立即付款");
+            table.Rows.Add("FF202008040855", "待付款", "炒年糕", "cy1", 1, 25, 2, 50, "取消订单", "立即付款");
+            table.Rows.Add("FF202008040853", "已完成", "酱香排骨", "menu3", 1, 25, 2, 50, "删除订单", "再次购买");
+            table.Rows.Add("FF202008040853", "已完成", "酱香排骨", "menu3", 1, 25, 2, 50, "删除订单", "再次购买");
+            table.Rows.Add("FF202008040853", "已完成", "酱香排骨", "menu3", 1, 25, 2, 50, "删除订单", "再次购买");
+            table.Rows.Add("FF202008040851", "待收货", "炒年糕", "cy1", 1, 25, 2, 50, "", "确认收货");
+
+            if (table.Rows.Count > 0)
             {
-                Order_State = state,
-                order_Id = 15 
-            };
-            string json = helper.Post("/Order/GetOrders", JsonConvert.SerializeObject(state1));
-            Data data = JsonConvert.DeserializeObject<Data>(json);
-            string orderData = JsonConvert.SerializeObject(data.Result);
-            List<OrderViewModel> orders = JsonConvert.DeserializeObject<List<OrderViewModel>>(orderData);
-            if (orders.Count > 0)
-            {
-                listView1.DataSource = orders;
+                listView1.DataSource = table;
                 listView1.DataBind();
-            } 
-           OrderShowListControl orderShowList = new OrderShowListControl(orders);
-             
+                listView5.DataSource = table;
+                listView5.DataBind();
+                listView4.DataSource = table;
+                listView4.DataBind();
+            }
+            //rderShowListControl orderShowList = new OrderShowListControl(orders);
+
         }
         private void toolBar1_ToolbarItemClick_1(object sender, ToolbarClickEventArgs e)
         {
@@ -108,151 +137,151 @@ namespace Order_Food_View.Page
             {
                 if (item.Length == 1)
                 {
-                    //state = item.Length;
-                    //OrderState state1 = new OrderState()
-                    //{
-                    //    Order_State = state
-                    //};
-                    //string json = helper.Post("/Order/GetOrders", JsonConvert.SerializeObject(state1));
-                    //Data data = JsonConvert.DeserializeObject<Data>(json);
-                    //string orderData = JsonConvert.SerializeObject(data.Result);
-                    //List<OrderViewModel> orders = JsonConvert.DeserializeObject<List<OrderViewModel>>(orderData);
-                    //if (orders.Count > 0)
-                    //{
-                    //    listView1.DataSource = orders;
-                    //    listView1.DataBind();
-                    //}
-                    // OrderShowListControl orderShowList = new OrderShowListControl(orders);
+                    state = item.Length;
+                    OrderState state1 = new OrderState()
+                    {
+                        Order_State = state
+                    };
+                    string json = helper.Post("/Order/GetOrders", JsonConvert.SerializeObject(state1));
+                    Data data = JsonConvert.DeserializeObject<Data>(json);
+                    string orderData = JsonConvert.SerializeObject(data.Result);
+                    List<OrderViewModel> orders = JsonConvert.DeserializeObject<List<OrderViewModel>>(orderData);
+                    if (orders.Count > 0)
+                    {
+                        listView1.DataSource = orders;
+                        listView1.DataBind();
+                    }
+                    OrderShowListControl orderShowList = new OrderShowListControl(orders);
                 }
                 else if (item.Length == 2)
                 {
-                    //state = item.Length;
-                    //OrderState state1 = new OrderState()
-                    //{
-                    //    Order_State = state
-                    //};
+                    state = item.Length;
+                    OrderState state1 = new OrderState()
+                    {
+                        Order_State = state
+                    };
 
-                    //string stringJson1 = helper.Post("/Order/GetOrders", JsonConvert.SerializeObject(state1));
-                    //Data data1 = JsonConvert.DeserializeObject<Data>(stringJson1);
-                    //string json1 = JsonConvert.SerializeObject(data1.Result);
-                    //List<OrderViewModel> orders = JsonConvert.DeserializeObject<List<OrderViewModel>>(json1); 
-                    //if (orders.Count > 0)
-                    //{
-                    //    listView1.DataSource = orders;
-                    //    listView1.DataBind();
-                    //    //listView4.DataSource = orders;
-                    //    //listView4.DataBind();
-                    //}
+                    string stringJson1 = helper.Post("/Order/GetOrders", JsonConvert.SerializeObject(state1));
+                    Data data1 = JsonConvert.DeserializeObject<Data>(stringJson1);
+                    string json1 = JsonConvert.SerializeObject(data1.Result);
+                    List<OrderViewModel> orders = JsonConvert.DeserializeObject<List<OrderViewModel>>(json1);
+                    if (orders.Count > 0)
+                    {
+                        //listView1.DataSource = orders;
+                        //listView1.DataBind();
+                        listView4.DataSource = orders;
+                        listView4.DataBind();
+                    }
                 }
                 else if (item.Length == 3)
                 {
-                    //state = item.Length;
-                    //OrderState state1 = new OrderState()
-                    //{
-                    //    Order_State = state
-                    //};
-                    //string json = helper.Post("/Order/GetOrders", JsonConvert.SerializeObject(state1));
-                    //Data data = JsonConvert.DeserializeObject<Data>(json);
-                    //string orderData = JsonConvert.SerializeObject(data.Result);
-                    //List<OrderViewModel> orders = JsonConvert.DeserializeObject<List<OrderViewModel>>(orderData);
-                    //if (orders.Count > 0)
-                    //{
-                    //    listView5.DataSource = orders;
-                    //    listView5.DataBind();
-                    //}
+                    state = item.Length;
+                    OrderState state1 = new OrderState()
+                    {
+                        Order_State = state
+                    };
+                    string json = helper.Post("/Order/GetOrders", JsonConvert.SerializeObject(state1));
+                    Data data = JsonConvert.DeserializeObject<Data>(json);
+                    string orderData = JsonConvert.SerializeObject(data.Result);
+                    List<OrderViewModel> orders = JsonConvert.DeserializeObject<List<OrderViewModel>>(orderData);
+                    if (orders.Count > 0)
+                    {
+                        listView5.DataSource = orders;
+                        listView5.DataBind();
+                    }
                 }
                 else
                 {
-                    //state = item.Length;
-                    //OrderState state1 = new OrderState()
-                    //{
-                    //    Order_State = state
-                    //};
-                    //string json = helper.Post("/Order/GetOrders", JsonConvert.SerializeObject(state1));
-                    //Data data = JsonConvert.DeserializeObject<Data>(json);
-                    //string orderData = JsonConvert.SerializeObject(data.Result);
-                    //List<OrderViewModel> orders = JsonConvert.DeserializeObject<List<OrderViewModel>>(orderData);
-                    //if (orders.Count > 0)
-                    //{
-                    //    listView6.DataSource = orders;
-                    //    listView6.DataBind();
-                    //}
+                    state = item.Length;
+                    OrderState state1 = new OrderState()
+                    {
+                        Order_State = state
+                    };
+                    string json = helper.Post("/Order/GetOrders", JsonConvert.SerializeObject(state1));
+                    Data data = JsonConvert.DeserializeObject<Data>(json);
+                    string orderData = JsonConvert.SerializeObject(data.Result);
+                    List<OrderViewModel> orders = JsonConvert.DeserializeObject<List<OrderViewModel>>(orderData);
+                    if (orders.Count > 0)
+                    {
+                        listView6.DataSource = orders;
+                        listView6.DataBind();
+                    }
                 }
             }
         }
         public void WmStateOrderList()
         {
-            //foreach (var item in tabPageView2.Titles)
-            //{
-            //    if (item.Length == 1)
-            //    {
-            //        state = item.Length;
-            //        OrderState state1 = new OrderState()
-            //        {
-            //            Order_State = state
-            //        };
-            //        string json = helper.Post("/Order/GetOrders", JsonConvert.SerializeObject(state1));
-            //        Data data = JsonConvert.DeserializeObject<Data>(json);
-            //        string orderData = JsonConvert.SerializeObject(data.Result);
-            //        List<OrderViewModel> orders = JsonConvert.DeserializeObject<List<OrderViewModel>>(orderData);
-            //        if (orders.Count > 0)
-            //        {
-            //            listView2.DataSource = orders;
-            //            listView2.DataBind();
-            //        }
-            //    }
-            //    else if (item.Length == 2)
-            //    {
-            //        state = item.Length;
-            //        OrderState state1 = new OrderState()
-            //        {
-            //            Order_State = state
-            //        };
-            //        string json = helper.Post("/Order/GetOrders", JsonConvert.SerializeObject(state1));
-            //        Data data = JsonConvert.DeserializeObject<Data>(json);
-            //        string orderData = JsonConvert.SerializeObject(data.Result);
-            //        List<OrderViewModel> orders = JsonConvert.DeserializeObject<List<OrderViewModel>>(orderData);
-            //        if (orders.Count > 0)
-            //        {
-            //            listView3.DataSource = orders;
-            //            listView3.DataBind();
-            //        }
-            //    }
-            //    else if (item.Length == 3)
-            //    {
-            //        state = item.Length;
-            //        OrderState state1 = new OrderState()
-            //        {
-            //            Order_State = state
-            //        };
-            //        string json = helper.Post("/Order/GetOrders", JsonConvert.SerializeObject(state1));
-            //        Data data = JsonConvert.DeserializeObject<Data>(json);
-            //        string orderData = JsonConvert.SerializeObject(data.Result);
-            //        List<OrderViewModel> orders = JsonConvert.DeserializeObject<List<OrderViewModel>>(orderData);
-            //        if (orders.Count > 0)
-            //        {
-            //            listView7.DataSource = orders;
-            //            listView7.DataBind();
-            //        }
-            //    }
-            //    else
-            //    {
-            //        state = item.Length;
-            //        OrderState state1 = new OrderState()
-            //        {
-            //            Order_State = state
-            //        };
-            //        string json = helper.Post("/Order/GetOrders", JsonConvert.SerializeObject(state1));
-            //        Data data = JsonConvert.DeserializeObject<Data>(json);
-            //        string orderData = JsonConvert.SerializeObject(data.Result);
-            //        List<OrderViewModel> orders = JsonConvert.DeserializeObject<List<OrderViewModel>>(orderData);
-            //        if (orders.Count > 0)
-            //        {
-            //            listView8.DataSource = orders;
-            //            listView8.DataBind();
-            //        }
-            //    }
-            //}
+            foreach (var item in tabPageView2.Titles)
+            {
+                if (item.Length == 1)
+                {
+                    state = item.Length;
+                    OrderState state1 = new OrderState()
+                    {
+                        Order_State = state
+                    };
+                    string json = helper.Post("/Order/GetOrders", JsonConvert.SerializeObject(state1));
+                    Data data = JsonConvert.DeserializeObject<Data>(json);
+                    string orderData = JsonConvert.SerializeObject(data.Result);
+                    List<OrderViewModel> orders = JsonConvert.DeserializeObject<List<OrderViewModel>>(orderData);
+                    if (orders.Count > 0)
+                    {
+                        listView2.DataSource = orders;
+                        listView2.DataBind();
+                    }
+                }
+                else if (item.Length == 2)
+                {
+                    state = item.Length;
+                    OrderState state1 = new OrderState()
+                    {
+                        Order_State = state
+                    };
+                    string json = helper.Post("/Order/GetOrders", JsonConvert.SerializeObject(state1));
+                    Data data = JsonConvert.DeserializeObject<Data>(json);
+                    string orderData = JsonConvert.SerializeObject(data.Result);
+                    List<OrderViewModel> orders = JsonConvert.DeserializeObject<List<OrderViewModel>>(orderData);
+                    if (orders.Count > 0)
+                    {
+                        listView3.DataSource = orders;
+                        listView3.DataBind();
+                    }
+                }
+                else if (item.Length == 3)
+                {
+                    state = item.Length;
+                    OrderState state1 = new OrderState()
+                    {
+                        Order_State = state
+                    };
+                    string json = helper.Post("/Order/GetOrders", JsonConvert.SerializeObject(state1));
+                    Data data = JsonConvert.DeserializeObject<Data>(json);
+                    string orderData = JsonConvert.SerializeObject(data.Result);
+                    List<OrderViewModel> orders = JsonConvert.DeserializeObject<List<OrderViewModel>>(orderData);
+                    if (orders.Count > 0)
+                    {
+                        listView7.DataSource = orders;
+                        listView7.DataBind();
+                    }
+                }
+                else
+                {
+                    state = item.Length;
+                    OrderState state1 = new OrderState()
+                    {
+                        Order_State = state
+                    };
+                    string json = helper.Post("/Order/GetOrders", JsonConvert.SerializeObject(state1));
+                    Data data = JsonConvert.DeserializeObject<Data>(json);
+                    string orderData = JsonConvert.SerializeObject(data.Result);
+                    List<OrderViewModel> orders = JsonConvert.DeserializeObject<List<OrderViewModel>>(orderData);
+                    if (orders.Count > 0)
+                    {
+                        listView8.DataSource = orders;
+                        listView8.DataBind();
+                    }
+                }
+            }
         }
 
     }

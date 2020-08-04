@@ -42,110 +42,109 @@ namespace Order_Food_View.UserControl
         //初始化加载
         private void OrderShowListControl_Load(object sender, EventArgs e)
         {
-            int  state = 3;
-            OrderState state1 = new OrderState()
-            {
-                Order_State = state,
-                order_Id = 15
-            };
-            string json = helper.Post("/Order/GetOrders", JsonConvert.SerializeObject(state1));
-            Data data = JsonConvert.DeserializeObject<Data>(json);
-            string orderData = JsonConvert.SerializeObject(data.Result);
-            List<OrderViewModel> orders = JsonConvert.DeserializeObject<List<OrderViewModel>>(json);
+            //int state = 3;
+            //OrderState state1 = new OrderState()
+            //{
+            //    Order_State = state,
+            //    order_Id = 15
+            //};
+            //string json = helper.Post("/Order/GetOrders", JsonConvert.SerializeObject(state1));
+            //Data data = JsonConvert.DeserializeObject<Data>(json);
+            //string orderData = JsonConvert.SerializeObject(data.Result);
+            //List<OrderViewModel> orders = JsonConvert.DeserializeObject<List<OrderViewModel>>(json);
+            #region MyRegion
 
-            List<OrderViewModel> list = orders;
-            //DataTable table = HelperClass.GetListToDataTable.ListToDataTable(list);
-            //table.Columns.Add("Order_No", typeof(System.String));
-            //table.Columns.Add("strState", typeof(System.String));
-            //table.Columns.Add("Menu_Pecture", typeof(System.String));
-            //table.Columns.Add("Number", typeof(System.Int32));
-            //table.Columns.Add("sum", typeof(System.Int32));
-            //table.Columns.Add("money", typeof(System.Decimal));
-            if (page == "堂食订单")
-            {
-                foreach (var item in list)
-                {
-                    if (item.Order_State == 1)
-                    {
-                        item.strState = lab_state.Text = "全部";
-                        // table.Rows.Add(item.Order_No, item.strState, item.Menu_Pecture, item.Number, item.Number + item.Number, item.Number * item.Price + item.Number * item.Price);
-                    }
-                    else if (item.Order_State == 2)
-                    {
-                        item.strState = lab_state.Text = "待付款";
-                        // table.Rows.Add(item.Order_No, item.strState, item.Menu_Pecture, item.Number, item.Number + item.Number, item.Number * item.Price + item.Number * item.Price);
-                    }
-                    else if (item.Order_State == 3)
-                    {
-                        item.strState = lab_state.Text = "已完成";
-                        //table.Rows.Add(item.Order_No, item.strState, item.Menu_Pecture, item.Number, item.Number + item.Number, item.Number * item.Price + item.Number * item.Price);
-                    }
-                    else
-                    {
-                        item.strState = lab_state.Text = "已取消";
-                        //table.Rows.Add(item.Order_No, item.strState, item.Menu_Pecture, item.Number, item.Number + item.Number, item.Number * item.Price + item.Number * item.Price);
-                    }
+          
+            //DataTable table = GetListToDataTable.ListToDataTable(orders);
+            //if (page == "堂食订单")
+            //{
+            //    foreach (var item in orders)
+            //    {
+            //        if (item.Order_State == 1)
+            //        {
+            //            item.strState = lab_state.Text = "全部";
+            //            table.Rows.Add(item.Order_No, item.strState, item.Menu_Pecture, item.Number, item.Number + item.Number, item.Number * item.Price + item.Number * item.Price);
+            //        }
+            //        else if (item.Order_State == 2)
+            //        {
+            //            item.strState = lab_state.Text = "待付款";
+            //            table.Rows.Add(item.Order_No, item.strState, item.Menu_Pecture, item.Number, item.Number + item.Number, item.Number * item.Price + item.Number * item.Price);
+            //        }
+            //        else if (item.Order_State == 3)
+            //        {
+            //            item.strState = lab_state.Text = "已完成";
+            //            table.Rows.Add(item.Order_No, item.strState, item.Menu_Pecture, item.Number, item.Number + item.Number, item.Number * item.Price + item.Number * item.Price);
+            //        }
+            //        else
+            //        {
+            //            item.strState = lab_state.Text = "已取消";
+            //            table.Rows.Add(item.Order_No, item.strState, item.Menu_Pecture, item.Number, item.Number + item.Number, item.Number * item.Price + item.Number * item.Price);
+            //        }
 
-                }
-            }
-            else
-            {
-                foreach (var item in list)
-                {
-                    if (item.Order_State == 1)
-                    {
-                        item.strState = lab_state.Text = "全部";
-                        //table.Rows.Add(item.Order_No, item.strState, item.Menu_Pecture, item.Number, item.Number + item.Number, item.Number * item.Price + item.Number * item.Price);
-                    }
-                    else if (item.Order_State == 2)
-                    {
-                        item.strState = lab_state.Text = "待付款";
-                        // table.Rows.Add(item.Order_No, item.strState, item.Menu_Pecture, item.Number, item.Number + item.Number, item.Number * item.Price + item.Number * item.Price);
-                    }
-                    else if (item.Order_State == 3)
-                    {
-                        item.strState = lab_state.Text = "已完成";
-                        // table.Rows.Add(item.Order_No, item.strState, item.Menu_Pecture, item.Number, item.Number + item.Number, item.Number * item.Price + item.Number * item.Price);
-                    }
-                    else
-                    {
-                        item.strState = lab_state.Text = "代收取";
-                        // table.Rows.Add(item.Order_No, item.strState, item.Menu_Pecture, item.Number, item.Number + item.Number, item.Number * item.Price + item.Number * item.Price);
-                    }
+            //    }
+            //}
+            //else
+            //{
+            //    foreach (var item in orders)
+            //    {
+            //        if (item.Order_State == 1)
+            //        {
+            //            item.strState = lab_state.Text = "全部";
+            //            table.Rows.Add(item.Order_No, item.strState, item.Menu_Pecture, item.Number, item.Number + item.Number, item.Number * item.Price + item.Number * item.Price);
+            //        }
+            //        else if (item.Order_State == 2)
+            //        {
+            //            item.strState = lab_state.Text = "待付款";
+            //            table.Rows.Add(item.Order_No, item.strState, item.Menu_Pecture, item.Number, item.Number + item.Number, item.Number * item.Price + item.Number * item.Price);
+            //        }
+            //        else if (item.Order_State == 3)
+            //        {
+            //            item.strState = lab_state.Text = "已完成";
+            //            table.Rows.Add(item.Order_No, item.strState, item.Menu_Pecture, item.Number, item.Number + item.Number, item.Number * item.Price + item.Number * item.Price);
+            //        }
+            //        else
+            //        {
+            //            item.strState = lab_state.Text = "代收取";
+            //            table.Rows.Add(item.Order_No, item.strState, item.Menu_Pecture, item.Number, item.Number + item.Number, item.Number * item.Price + item.Number * item.Price);
+            //        }
 
-                }
-            }
+            //    }
+            //}
 
-            if (lab_state.Text == "待付款")
-            {
-                btn_setOrder.Text = "取消订单";
+            //if (lab_state.Text == "待付款")
+            //{
+            //    btn_setOrder.Text = "取消订单";
 
-                btn_successOrder.Text = "立即付款";
-            }
-            else if (lab_state.Text == "已完成")
-            {
-                btn_setOrder.Text = "删除订单";
-                btn_successOrder.Text = "再次购买";
-            }
-            else if (lab_state.Text == "待收取")
-            {
-                btn_setOrder.Visible = false;
-                btn_successOrder.Text = "确认收货";
-            }
-            else if (lab_state.Text == "已取消")
-            {
-                btn_setOrder.Text = "删除订单";
-                btn_successOrder.Text = "再次购买";
-            }
-            else
-            {
-                btn_setOrder.Text = "删除订单";
-                btn_successOrder.Text = "再次购买";
-            }
+            //    btn_successOrder.Text = "立即付款";
+            //}
+            //else if (lab_state.Text == "已完成")
+            //{
+            //    btn_setOrder.Text = "删除订单";
+            //    btn_successOrder.Text = "再次购买";
+            //}
+            //else if (lab_state.Text == "待收取")
+            //{
+            //    btn_setOrder.Visible = false;
+            //    btn_successOrder.Text = "确认收货";
+            //}
+            //else if (lab_state.Text == "已取消")
+            //{
+            //    btn_setOrder.Text = "删除订单";
+            //    btn_successOrder.Text = "再次购买";
+            //}
+            //else
+            //{
+            //    btn_setOrder.Text = "删除订单";
+            //    btn_successOrder.Text = "再次购买";
+            //}
+            #endregion
         }
 
         private void btn_setOrder_Press(object sender, EventArgs e)
         {
+            #region MyRegion
+
+           
             //堂食
             if (lab_state.Text == "待付款")
             {
@@ -188,6 +187,7 @@ namespace Order_Food_View.UserControl
                 btn_setOrder.Text = "删除订单";
                 btn_successOrder.Text = "再次购买";
             }
+            #endregion
         }
 
         private void btn_successOrder_Press(object sender, EventArgs e)
